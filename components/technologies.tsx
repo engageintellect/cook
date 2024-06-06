@@ -41,6 +41,12 @@ const slugs = [
   "tensorflow",
   "linode",
   "kalilinux",
+  "pandas",
+  "numpy",
+  "freebsd",
+  "django",
+  "drizzle",
+  "digitalocean",
 ];
 
 export default function Technologies() {
