@@ -1,4 +1,6 @@
 import { Calendar } from "@/components/ui/calendar";
+import Technologies from "@/components/technologies";
+import Globe from "@/components/magicui/globe";
 import {
   Command,
   CommandEmpty,
@@ -8,7 +10,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
-// import AnimatedBeamMultipleOutputDemo from "@/components/example/animated-beam-multiple-outputs";
+import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Marquee from "@/components/magicui/marquee";
 import { CalendarIcon, FileTextIcon, InputIcon } from "@radix-ui/react-icons";
@@ -89,7 +91,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
         // light styles
         "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         // dark styles
-        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
       )}
     >
       <div className="flex flex-row items-center gap-3">
@@ -119,7 +121,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
+    name: "Any Project",
     description: "We automatically save your files as you type.",
     href: "/",
     cta: "Learn more",
@@ -136,7 +138,7 @@ const features = [
               "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
+              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
             )}
           >
             <div className="flex flex-row items-center gap-2">
@@ -154,57 +156,64 @@ const features = [
   },
   {
     Icon: InputIcon,
-    name: "Full text search",
-    description: "Search through all your files in one place.",
-    href: "/",
+    name: "Technologies",
+    description: "Using the latest technologies to power your projects.",
+    href: "/technologies",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <Command className="absolute right-10 top-10 w-[70%] origin-top translate-x-0 border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-x-10">
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>screenshot.png</CommandItem>
-            <CommandItem>bitcoin.pdf</CommandItem>
-            <CommandItem>finances.xlsx</CommandItem>
-            <CommandItem>logo.svg</CommandItem>
-            <CommandItem>keys.gpg</CommandItem>
-            <CommandItem>seed.txt</CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </Command>
+      <div className="absolute right-10 top-10 w-[70%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-y-12 group-hover:scale-110">
+        <Technologies />
+      </div>
+
+      // <Command className="absolute right-10 top-10 w-[70%] origin-top translate-x-0 border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-x-10">
+      //   <CommandInput placeholder="Type a command or search..." />
+      //   <CommandList>
+      //     <CommandEmpty>No results found.</CommandEmpty>
+      //     <CommandGroup heading="Suggestions">
+      //       <CommandItem>screenshot.png</CommandItem>
+      //       <CommandItem>bitcoin.pdf</CommandItem>
+      //       <CommandItem>finances.xlsx</CommandItem>
+      //       <CommandItem>logo.svg</CommandItem>
+      //       <CommandItem>keys.gpg</CommandItem>
+      //       <CommandItem>seed.txt</CommandItem>
+      //     </CommandGroup>
+      //   </CommandList>
+      // </Command>
     ),
   },
   {
     Icon: Share2Icon,
-    name: "Integrations",
+    name: "AI Integrations",
     description: "Supports 100+ integrations and counting.",
-    href: "/",
+    href: "/ai-integrations",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
-    background: (''
-      // <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+    background: (
+      <AnimatedBeamMultipleOutputs className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
+    name: "Worldwide Deployments",
     description: "Use the calendar to filter your files by date.",
     className: "col-span-3 lg:col-span-1",
     href: "/",
     cta: "Learn more",
     background: (
-      <Calendar
-        mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
-        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-      />
+      <div className="">
+        <Globe />
+      </div>
+      // <Calendar
+      // mode="single"
+      // selected={new Date(2022, 4, 11, 0, 0, 0)}
+      // className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+      // />
     ),
   },
 ];
 
-export default function BentoDemo() {
+export function Bento() {
   return (
     <BentoGrid>
       {features.map((feature, idx) => (

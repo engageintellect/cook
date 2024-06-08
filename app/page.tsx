@@ -1,15 +1,24 @@
 import WordPullUp from "@/components/magicui/word-pull-up";
 import Technologies from "@/components/technologies";
-import BentoDemo from "@/components/bento";
+import { Bento } from "@/components/bento";
+import { CallToAction } from "@/components/call-to-action";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import Comments from "@/components/comments";
 import { Button } from "@/components/ui/button";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div className="w-full flex items-center justify-center max-w-3xl mx-auto">
-        <div className="flex flex-col items-center max-w-3xl mx-auto">
+      <div className="w-full flex items-center justify-center max-w-5xl mx-auto">
+        <div className="flex flex-col items-center overflow-hidden">
+          {/* <Image */}
+          {/* src="https://github.com/engageintellect.png" */}
+          {/* width={800} */}
+          {/* height={800} */}
+          {/* alt="Hero" */}
+          {/* /> */}
           <WordPullUp words="Let's Cook" />
           <p className="w-full max-w-lg py-5 px-6">
             Ipsum exercitation mollit veniam ipsum laboris cupidatat irure quis
@@ -33,17 +42,9 @@ export default function Home() {
               </ShimmerButton>
             </a>
           </div>
-          <Technologies />
 
-          {/* <div className="my-20 max-w-3xl w-full mx-auto">
-            <VelocityScroll
-              text="Developer, Crypto, Stocks"
-              default_velocity={5}
-              className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-            />
-          </div> */}
-          <div className="w-full max-w-3xl mx-auto my-10">
-            <BentoDemo />
+          <div className="w-full py-10  px-2 lg:px-4">
+            <Bento />
           </div>
         </div>
       </div>
