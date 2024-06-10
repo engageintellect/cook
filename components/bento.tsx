@@ -1,6 +1,8 @@
 import { Calendar } from "@/components/ui/calendar";
 import Technologies from "@/components/technologies";
+import Hero from "@/components/hero";
 import Globe from "@/components/magicui/globe";
+import Orbit from "@/components/orbit";
 import {
   Command,
   CommandEmpty,
@@ -13,7 +15,13 @@ import { cn } from "@/lib/utils";
 import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Marquee from "@/components/magicui/marquee";
-import { CalendarIcon, FileTextIcon, InputIcon } from "@radix-ui/react-icons";
+import {
+  CalendarIcon,
+  FileTextIcon,
+  GridIcon,
+  InputIcon,
+  CodeIcon,
+} from "@radix-ui/react-icons";
 import { Share2Icon } from "lucide-react";
 
 const files = [
@@ -120,11 +128,49 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
 
 const features = [
   {
-    Icon: FileTextIcon,
-    name: "Any Project",
-    description: "We automatically save your files as you type.",
-    href: "/",
-    cta: "Learn more",
+    Icon: "",
+    name: "",
+    description: "",
+    href: "",
+    cta: "",
+    className: "col-span-3 lg:col-span-2",
+    background: (
+      <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)] group-hover:scale-105">
+        <Hero />
+      </div>
+    ),
+  },
+  {
+    Icon: "",
+    name: "I'm Josh",
+    description: "Fullstack Developer, AI, Penetration Testing, and more. ",
+    className: "col-span-3 lg:col-span-1",
+    href: "https://bento.engage-dev.com",
+    cta: "Visit Portfolio",
+    background: (
+      <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
+        <img
+          className="object-cover object-center h-full w-full"
+          src="https://github.com/engageintellect.png"
+          alt="avatar image"
+        />
+      </div>
+
+      // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
+      // <Calendar
+      // mode="single"
+      // selected={new Date(2022, 4, 11, 0, 0, 0)}
+      // className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+      // />
+    ),
+  },
+
+  {
+    Icon: GridIcon,
+    name: "Any type of Project",
+    description: "AI, Web, Commerce, Finance.",
+    href: "https://bento.engage-dev.com/projects",
+    cta: "View Projects",
     className: "col-span-3 lg:col-span-1",
     background: (
       <Marquee
@@ -185,8 +231,8 @@ const features = [
   {
     Icon: Share2Icon,
     name: "AI Integrations",
-    description: "Supports 100+ integrations and counting.",
-    href: "/ai-integrations",
+    description: "Generative UIs, LLMs, Transformers, and more.",
+    href: "https://bento.engage-dev.com/tags/ai",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
@@ -195,13 +241,33 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Worldwide Deployments",
-    description: "Use the calendar to filter your files by date.",
+    name: "Seamless Deployments",
+    description: "push, build, deploy.",
     className: "col-span-3 lg:col-span-1",
     href: "/",
     cta: "Learn more",
     background: (
-      <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
+      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105">
+        <Orbit />
+      </div>
+      // <Calendar
+      // mode="single"
+      // selected={new Date(2022, 4, 11, 0, 0, 0)}
+      // className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+      // />
+    ),
+  },
+
+  {
+    Icon: CalendarIcon,
+    name: "Worldwide Reach",
+    description:
+      "Deploy your projects to any region in the world. on-prem, or in the cloud.",
+    className: "col-span-3 lg:col-span-3",
+    href: "/",
+    cta: "Learn more",
+    background: (
+      <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
       // <Calendar
       // mode="single"
       // selected={new Date(2022, 4, 11, 0, 0, 0)}
