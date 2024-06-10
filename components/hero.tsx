@@ -10,7 +10,7 @@ export default function Hero() {
     <div className="relative flex h-full w-full mx-auto items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
       <div className="flex flex-col items-start justify-center h-full overflow-hidden z-50 p-6">
         <WordPullUp words="Let's Cook" />
-        <div className="w-full max-w-md text-neutral-600">
+        <div className="text-lg text-neutral-600 px-1">
           building full-stack applications with a focus on user experience and
           performance
         </div>
