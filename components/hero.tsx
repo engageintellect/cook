@@ -8,10 +8,10 @@ import WordPullUp from "@/components/magicui/word-pull-up";
 export default function Hero() {
   return (
     <div className="relative flex h-full w-full mx-auto items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <div className="flex flex-col items-center justify-center h-full overflow-hidden z-50">
+      <div className="flex flex-col items-center justify-center h-full overflow-hidden z-50 p-6">
         <WordPullUp words="Let's Cook" />
         <div>
-          <p className="w-full max-w-lg py-5 px-6">
+          <p className="w-full">
             building full-stack applications with a focus on user experience and
             performance
           </p>
