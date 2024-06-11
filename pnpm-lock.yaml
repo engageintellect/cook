@@ -56,6 +56,9 @@ dependencies:
   react-icon-cloud:
     specifier: ^4.1.4
     version: 4.1.4(react@18.3.1)
+  react-icons:
+    specifier: ^5.2.1
+    version: 5.2.1(react@18.3.1)
   tailwind-merge:
     specifier: ^2.3.0
     version: 2.3.0
@@ -6590,6 +6593,14 @@ packages:
       react: '>=16'
     dependencies:
       '@csstools/convert-colors': 2.0.0
+      react: 18.3.1
+    dev: false
+
+  /react-icons@5.2.1(react@18.3.1):
+    resolution: {integrity: sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
       react: 18.3.1
     dev: false
 
