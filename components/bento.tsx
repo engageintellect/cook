@@ -3,6 +3,7 @@ import Technologies from "@/components/technologies";
 import Hero from "@/components/hero";
 import Globe from "@/components/magicui/globe";
 import Orbit from "@/components/orbit";
+import ThemeToggle from "@/components/theme-toggle";
 import {
   Command,
   CommandEmpty,
@@ -23,27 +24,28 @@ import {
   CodeIcon,
 } from "@radix-ui/react-icons";
 import { Share2Icon } from "lucide-react";
+import { formatTagString } from "@/lib/utils";
 
 const files = [
   {
-    name: "bitcoin.pdf",
-    body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
+    name: "Crypto",
+    body: "Interface with blockchains, create smart contracts, track market data, manage digital assets.",
   },
   {
-    name: "finances.xlsx",
-    body: "A spreadsheet or worksheet is a file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
+    name: "Commerce",
+    body: "Sell your product or service online.",
   },
   {
-    name: "logo.svg",
-    body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
+    name: "Web",
+    body: "Create beautiful, responsive, and performant websites.",
   },
   {
-    name: "keys.gpg",
-    body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
+    name: "IOT",
+    body: "Interface with things around you.",
   },
   {
-    name: "seed.txt",
-    body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
+    name: "AI",
+    body: "Create intelligent, context-aware applications that understand your unique data.",
   },
 ];
 
@@ -135,9 +137,15 @@ const features = [
     cta: "",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)] group-hover:scale-105">
-        <Hero />
-      </div>
+      <>
+        <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)]">
+          <Hero />
+        </div>
+
+        <div className="absolute right-0 top-0">
+          <ThemeToggle />
+        </div>
+      </>
     ),
   },
   {
@@ -175,16 +183,19 @@ const features = [
     background: (
       <Marquee
         pauseOnHover
-        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
+        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] "
       >
         {files.map((f, idx) => (
-          <figure
+          <a
+            href={`https://bento.engage-dev.com/tags/${formatTagString(
+              f.name
+            )}`}
             key={idx}
             className={cn(
               "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
+              "transform-gpu transition-all duration-300 ease-out hover:blur-none"
             )}
           >
             <div className="flex flex-row items-center gap-2">
@@ -195,7 +206,7 @@ const features = [
               </div>
             </div>
             <blockquote className="mt-2 text-xs">{f.body}</blockquote>
-          </figure>
+          </a>
         ))}
       </Marquee>
     ),

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
+import ShimmerButton from "./magicui/shimmer-button";
 
 export default function Hero() {
   return (
