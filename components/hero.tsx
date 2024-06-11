@@ -21,7 +21,11 @@ export default function Hero() {
           </div>
 
           <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6 z-50">
-            <a href="https://github.com/engageintellect" className="flex-1">
+            <a
+              href="https://github.com/engageintellect"
+              target="_blank"
+              className="flex-1"
+            >
               <Button
                 variant="default"
                 size="lg"
@@ -32,7 +36,11 @@ export default function Hero() {
               </Button>
             </a>
 
-            <a href="https://github.com/engageintellect" className="flex-1">
+            <a
+              href="mailto:engage_intellect@protonmail.com"
+              target="_blank"
+              className="flex-1"
+            >
               <Button
                 variant="default"
                 size="lg"
