@@ -12,7 +12,7 @@ export default function Orbit() {
       <OrbitingCircles
         className="h-[20px] w-[20px] border-none bg-transparent"
         duration={20}
-        delay={20}
+        delay={10}
         radius={50}
       >
         <Icons.whatsapp />
