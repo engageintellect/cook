@@ -175,7 +175,7 @@ const features = [
 
   {
     Icon: GridIcon,
-    name: "Any type of Project",
+    name: "Project Domain",
     description: "AI, Web, Commerce, Finance.",
     href: "https://bento.engage-dev.com/projects",
     cta: "View Projects",

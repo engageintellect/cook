@@ -7,20 +7,22 @@ import WordPullUp from "@/components/magicui/word-pull-up";
 import ShimmerButton from "./magicui/shimmer-button";
 import { Button } from "@/components/ui/button";
 import { Mail, Github } from "lucide-react";
+import BlurIn from "@/components/magicui/blur-in";
 
 export default function Hero() {
   return (
     <div className="relative flex h-full w-full mx-auto items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <div className="flex flex-col items-start justify-center h-full overflow-hidden p-6">
+      <div className="flex flex-col items-start justify-center h-full overflow-hidden p-6 z-50">
         <WordPullUp words="Let's Cook" />
 
         <div className="text-lg text-neutral-500 lg:px-1 w-full ">
-          <div className="w-2/3">
-            building full-stack applications with a focus on user experience and
-            performance
-          </div>
+            <BlurIn
+              className="w-2/3"
+              word="building full-stack applications with focuses in generative AI,
+            automation, and user experience and performance"
+            />
 
-          <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6 z-50">
+          <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6">
             <a
               href="https://github.com/engageintellect"
               target="_blank"
@@ -53,6 +55,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
       <MeteorShower />
       {/* <AnimatedGridPattern
         numSquares={30}
