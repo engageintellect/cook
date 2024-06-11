@@ -142,7 +142,7 @@ const features = [
           <Hero />
         </div>
 
-        <div className="absolute right-0 top-0">
+        <div className="absolute right-0 top-0 z-50">
           <ThemeToggle />
         </div>
       </>

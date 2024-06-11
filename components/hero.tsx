@@ -16,11 +16,11 @@ export default function Hero() {
         <WordPullUp words="Let's Cook" />
 
         <div className="text-lg text-neutral-500 lg:px-1 w-full ">
-            <BlurIn
-              className="w-2/3"
-              word="building full-stack applications with focuses in generative AI,
-            automation, and user experience and performance"
-            />
+          <BlurIn
+            className="w-2/3"
+            word="building full-stack applications with focuses in generative AI,
+            automation, user experience, and performance."
+          />
 
           <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6">
             <a

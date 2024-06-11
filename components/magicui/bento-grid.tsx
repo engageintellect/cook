@@ -78,11 +78,11 @@ const BentoCard = ({
           variant="ghost"
           asChild
           size="sm"
-          className="pointer-events-auto"
+          className="pointer-events-auto group/Arrow"
         >
           <a href={href}>
             {cta}
-            <ArrowRightIcon className="ml-2 h-4 w-4" />
+            <ArrowRightIcon className="ml-2 h-4 w-4 lg:group-hover/Arrow:translate-x-1 transition-transform duration-300" />
           </a>
         </Button>
       ) : (
