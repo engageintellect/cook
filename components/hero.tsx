@@ -5,17 +5,44 @@ import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import ShimmerButton from "./magicui/shimmer-button";
+import { Button } from "@/components/ui/button";
+import { Mail, Github } from "lucide-react";
 
 export default function Hero() {
   return (
     <div className="relative flex h-full w-full mx-auto items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <div className="flex flex-col items-start justify-center h-full overflow-hidden z-50 p-6">
+      <div className="flex flex-col items-start justify-center h-full overflow-hidden p-6">
         <WordPullUp words="Let's Cook" />
 
-        {/* //TODO!: The spacing on this 'px-1' is kinda weird. There should be a better way to align this text with the hero text above it.   */}
-        <div className="text-lg text-neutral-600 px-1">
-          building full-stack applications with a focus on user experience and
-          performance
+        <div className="text-lg text-neutral-500 lg:px-1 w-full ">
+          <div className="w-2/3">
+            building full-stack applications with a focus on user experience and
+            performance
+          </div>
+
+          <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6 z-50">
+            <a href="https://github.com/engageintellect" className="flex-1">
+              <Button
+                variant="default"
+                size="lg"
+                className="flex items-center gap-2 w-full "
+              >
+                <div>GitHub</div>
+                <Github className="mr-2 h-5 w-5" />
+              </Button>
+            </a>
+
+            <a href="https://github.com/engageintellect" className="flex-1">
+              <Button
+                variant="default"
+                size="lg"
+                className="flex items-center gap-2 w-full"
+              >
+                <div>Contact</div>
+                <Mail className="mr-2 h-5 w-5" />
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
       <MeteorShower />

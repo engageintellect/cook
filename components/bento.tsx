@@ -138,7 +138,7 @@ const features = [
     className: "col-span-3 lg:col-span-2",
     background: (
       <>
-        <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)]">
+        <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out">
           <Hero />
         </div>
 

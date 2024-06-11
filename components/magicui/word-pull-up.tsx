@@ -34,7 +34,7 @@ export default function WordPullUp({
       initial="hidden"
       animate="show"
       className={cn(
-        "font-display text-center text-6xl md:text-7xl lg:text-8xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
+        "font-display text-center text-6xl md:text-7xl lg:text-8xl font-bold leading-[5rem] tracking-tighter drop-shadow-sm",
         className
       )}
     >
@@ -42,7 +42,7 @@ export default function WordPullUp({
         <motion.span
           key={i}
           variants={framerProps}
-          style={{ display: "inline-block", paddingRight: "8px" }}
+          style={{ display: "inline-block", paddingRight: "1rem" }}
         >
           {word === "" ? <span>&nbsp;</span> : word}
         </motion.span>
