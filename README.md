@@ -2,7 +2,17 @@
 
 ## Description:
 
-An ultra-modern, bento-box styled portfolio landing page using Next.js, MagicUI, Shadcn/ui, and Tailwind CSS.
+An ultra-modern, bento-box styled portfolio landing page for developers, designers, and other creatives.
+
+## Technologies:
+
+- next.js
+- magic-ui
+- shadcn/ui
+- tailwind css
+- zod
+- pocketbase
+- react-hook-form
 
 ## TODO:
 
