@@ -1,17 +1,13 @@
-import { Calendar } from "@/components/ui/calendar";
+"use client";
+
+import BlurIn from "@/components/magicui/blur-in";
+import { FadeIn } from "@/components/magicui/fade-in";
 import Technologies from "@/components/technologies";
 import Hero from "@/components/hero";
 import Globe from "@/components/magicui/globe";
+import NumberTicker from "@/components/magicui/number-ticker";
 import Orbit from "@/components/orbit";
 import ThemeToggle from "@/components/theme-toggle";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
 import { cn } from "@/lib/utils";
 import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
@@ -23,8 +19,20 @@ import {
   InputIcon,
   CodeIcon,
 } from "@radix-ui/react-icons";
+import { FaStar } from "react-icons/fa";
+
 import { Share2Icon } from "lucide-react";
 import { formatTagString } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import { InputWithButton } from "./ui/input-with-button";
+
+const fetchStars = async (): Promise<number> => {
+  const baseUrl =
+    typeof window !== "undefined" ? "" : process.env.NEXT_PUBLIC_BASE_URL;
+  const res = await fetch(`${baseUrl}/api/fetch-github-stars`);
+  const data = await res.json();
+  return Number(data?.totalStars);
+};
 
 const files = [
   {
@@ -57,75 +65,94 @@ interface Item {
   time: string;
 }
 
-let notifications = [
-  {
-    name: "Payment received",
-    description: "Magic UI",
-    time: "15m ago",
+// let notifications = [
+//   {
+//     name: "Payment received",
+//     description: "Magic UI",
+//     time: "15m ago",
 
-    icon: "💸",
-    color: "#00C9A7",
-  },
-  {
-    name: "User signed up",
-    description: "Magic UI",
-    time: "10m ago",
-    icon: "👤",
-    color: "#FFB800",
-  },
-  {
-    name: "New message",
-    description: "Magic UI",
-    time: "5m ago",
-    icon: "💬",
-    color: "#FF3D71",
-  },
-  {
-    name: "New event",
-    description: "Magic UI",
-    time: "2m ago",
-    icon: "🗞️",
-    color: "#1E86FF",
-  },
-];
+//     icon: "💸",
+//     color: "#00C9A7",
+//   },
+//   {
+//     name: "User signed up",
+//     description: "Magic UI",
+//     time: "10m ago",
+//     icon: "👤",
+//     color: "#FFB800",
+//   },
+//   {
+//     name: "New message",
+//     description: "Magic UI",
+//     time: "5m ago",
+//     icon: "💬",
+//     color: "#FF3D71",
+//   },
+//   {
+//     name: "New event",
+//     description: "Magic UI",
+//     time: "2m ago",
+//     icon: "🗞️",
+//     color: "#1E86FF",
+//   },
+// ];
 
-notifications = Array.from({ length: 10 }, () => notifications).flat();
+// notifications = Array.from({ length: 10 }, () => notifications).flat();
 
-const Notification = ({ name, description, icon, color, time }: Item) => {
-  return (
-    <figure
-      className={cn(
-        "relative mx-auto min-h-fit w-full max-w-[400px] transform cursor-pointer overflow-hidden rounded-2xl p-4",
-        // animation styles
-        "transition-all duration-200 ease-in-out hover:scale-[103%]",
-        // light styles
-        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-        // dark styles
-        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
-      )}
-    >
-      <div className="flex flex-row items-center gap-3">
-        <div
-          className="flex h-10 w-10 items-center justify-center rounded-2xl"
-          style={{
-            backgroundColor: color,
-          }}
-        >
-          <span className="text-lg">{icon}</span>
-        </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
-            <span className="text-sm sm:text-lg">{name}</span>
-            <span className="mx-1">·</span>
-            <span className="text-xs text-gray-500">{time}</span>
-          </figcaption>
-          <p className="text-sm font-normal dark:text-white/60">
-            {description}
-          </p>
-        </div>
-      </div>
-    </figure>
-  );
+// const Notification = ({ name, description, icon, color, time }: Item) => {
+//   return (
+//     <figure
+//       className={cn(
+//         "relative mx-auto min-h-fit w-full max-w-[400px] transform cursor-pointer overflow-hidden rounded-2xl p-4",
+//         // animation styles
+//         "transition-all duration-200 ease-in-out hover:scale-[103%]",
+//         // light styles
+//         "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
+//         // dark styles
+//         "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
+//       )}
+//     >
+//       <div className="flex flex-row items-center gap-3">
+//         <div
+//           className="flex h-10 w-10 items-center justify-center rounded-2xl"
+//           style={{
+//             backgroundColor: color,
+//           }}
+//         >
+//           <span className="text-lg">{icon}</span>
+//         </div>
+//         <div className="flex flex-col overflow-hidden">
+//           <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
+//             <span className="text-sm sm:text-lg">{name}</span>
+//             <span className="mx-1">·</span>
+//             <span className="text-xs text-gray-500">{time}</span>
+//           </figcaption>
+//           <p className="text-sm font-normal dark:text-white/60">
+//             {description}
+//           </p>
+//         </div>
+//       </div>
+//     </figure>
+//   );
+// };
+
+const GitHubStars = () => {
+  const [stars, setStars] = useState<number | null>(null);
+
+  useEffect(() => {
+    const getStars = async () => {
+      const totalStars = await fetchStars();
+      setStars(totalStars);
+    };
+
+    getStars();
+  }, []);
+
+  if (stars === null) {
+    return <div>Loading...</div>;
+  }
+
+  return <NumberTicker value={stars} />;
 };
 
 const features = [
@@ -143,7 +170,9 @@ const features = [
         </div>
 
         <div className="absolute right-0 top-0 z-50">
-          <ThemeToggle />
+          <FadeIn direction="down">
+            <ThemeToggle />
+          </FadeIn>
         </div>
       </>
     ),
@@ -154,31 +183,26 @@ const features = [
     description: "Fullstack Developer, AI, Penetration Testing, and more. ",
     className: "col-span-3 lg:col-span-1",
     href: "https://bento.engage-dev.com",
-    cta: "Visit Portfolio",
+    cta: "Visit portfolio",
     background: (
       <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
-        <img
-          className="object-cover object-center h-full w-full"
-          src="https://github.com/engageintellect.png"
-          alt="avatar image"
-        />
+        <BlurIn duration={0.5} className="h-full">
+          <img
+            className="object-cover object-center h-full w-full"
+            src={process.env.AVATAR_URL}
+            alt="avatar image"
+          />
+        </BlurIn>
       </div>
-
-      // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
-      // <Calendar
-      // mode="single"
-      // selected={new Date(2022, 4, 11, 0, 0, 0)}
-      // className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-      // />
     ),
   },
 
   {
-    Icon: GridIcon,
+    Icon: "",
     name: "Project Domain",
     description: "AI, Web, Commerce, Finance.",
     href: "https://bento.engage-dev.com/projects",
-    cta: "View Projects",
+    cta: "View projects",
     className: "col-span-3 lg:col-span-1",
     background: (
       <Marquee
@@ -212,7 +236,7 @@ const features = [
     ),
   },
   {
-    Icon: InputIcon,
+    Icon: "",
     name: "Technologies",
     description: "Using the latest technologies to power your projects.",
     href: "/technologies",
@@ -220,7 +244,9 @@ const features = [
     className: "col-span-3 lg:col-span-2",
     background: (
       <div className="absolute right-0 top-0 w-[70%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-y-12 group-hover:scale-110">
-        <Technologies />
+        <FadeIn direction="up">
+          <Technologies />
+        </FadeIn>
       </div>
 
       // <Command className="absolute right-10 top-10 w-[70%] origin-top translate-x-0 border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-x-10">
@@ -240,7 +266,7 @@ const features = [
     ),
   },
   {
-    Icon: Share2Icon,
+    Icon: "",
     name: "AI Integrations",
     description: "Generative UIs, LLMs, Transformers, and more.",
     href: "https://bento.engage-dev.com/tags/ai",
@@ -251,7 +277,7 @@ const features = [
     ),
   },
   {
-    Icon: CalendarIcon,
+    Icon: "",
     name: "Seamless Deployments",
     description: "push, build, deploy.",
     className: "col-span-3 lg:col-span-1",
@@ -261,16 +287,11 @@ const features = [
       <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105">
         <Orbit />
       </div>
-      // <Calendar
-      // mode="single"
-      // selected={new Date(2022, 4, 11, 0, 0, 0)}
-      // className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-      // />
     ),
   },
 
   {
-    Icon: CalendarIcon,
+    Icon: "",
     name: "Worldwide Reach",
     description:
       "Deploy your projects to any region in the world. on-prem, or in the cloud.",
@@ -279,6 +300,44 @@ const features = [
     cta: "Learn more",
     background: (
       <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
+    ),
+  },
+
+  {
+    Icon: "",
+    name: "GitHub Stars",
+    description: "Star this repository to show your support.",
+    className: "col-span-3 lg:col-span-1",
+    href: `${process.env.GITHUB_URL}/${process.env.REPO_NAME}`,
+    cta: "Star repository",
+    background: (
+      // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
+
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4">
+        <div className="text-8xl font-semibold  w-full flex justify-center items-center h-2/3  group-hover:-translate-y-2 transition-all duration-300">
+          <div className="flex items-center gap-2">
+            <GitHubStars />
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  {
+    Icon: "",
+    name: "Let's do this.",
+    description: "Enter your email to get started.",
+    className: "col-span-3 lg:col-span-2",
+    href: "/",
+    cta: "Learn more",
+    background: (
+      // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
+
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]">
+        <div className="text-8xl font-semibold  w-full flex justify-center items-center h-2/3 transition-all duration-300">
+          <InputWithButton />
+        </div>
+      </div>
       // <Calendar
       // mode="single"
       // selected={new Date(2022, 4, 11, 0, 0, 0)}

@@ -6,6 +6,7 @@ import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import ShimmerButton from "./magicui/shimmer-button";
 import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/magicui/fade-in";
 import { Mail, Github } from "lucide-react";
 import BlurIn from "@/components/magicui/blur-in";
 
@@ -16,43 +17,44 @@ export default function Hero() {
         <WordPullUp words="Let's Cook" />
 
         <div className="text-lg text-neutral-500 lg:px-1 w-full ">
-          <BlurIn
-            className="w-2/3"
-            word="building full-stack applications with focuses in generative AI,
-            automation, user experience, and performance."
-          />
+          <BlurIn className="w-2/3">
+            building full-stack applications with focuses in generative AI,
+            automation, user experience, and performance.
+          </BlurIn>
 
-          <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6">
-            <a
-              href="https://github.com/engageintellect"
-              target="_blank"
-              className="flex-1"
-            >
-              <Button
-                variant="default"
-                size="lg"
-                className="flex items-center gap-2 w-full "
+          <FadeIn direction="down" className="my-class">
+            <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6">
+              <a
+                href={`${process.env.GITHUB_URL}`}
+                target="_blank"
+                className="flex-1"
               >
-                <div>GitHub</div>
-                <Github className="mr-2 h-5 w-5" />
-              </Button>
-            </a>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="flex items-center gap-2 w-full "
+                >
+                  <div>GitHub</div>
+                  <Github className="mr-2 h-5 w-5" />
+                </Button>
+              </a>
 
-            <a
-              href="mailto:engage_intellect@protonmail.com"
-              target="_blank"
-              className="flex-1"
-            >
-              <Button
-                variant="default"
-                size="lg"
-                className="flex items-center gap-2 w-full"
+              <a
+                href="mailto:engage_intellect@protonmail.com"
+                target="_blank"
+                className="flex-1"
               >
-                <div>Contact</div>
-                <Mail className="mr-2 h-5 w-5" />
-              </Button>
-            </a>
-          </div>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="flex items-center gap-2 w-full"
+                >
+                  <div>Contact</div>
+                  <Mail className="mr-2 h-5 w-5" />
+                </Button>
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </div>
 
