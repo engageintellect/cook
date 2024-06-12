@@ -25,7 +25,7 @@ export default function Hero() {
           <FadeIn direction="down" className="my-class">
             <div className="flex items-center gap-2 w-full lg:w-2/3 mt-6">
               <a
-                href={`${process.env.GITHUB_URL}`}
+                href={process.env.GITHUB_URL}
                 target="_blank"
                 className="flex-1"
               >

@@ -10,7 +10,6 @@ const slugs = [
   "amazonaws",
   "tailwindcss",
   "graphql",
-  "apollo",
   "mongodb",
   "postgresql",
   "mysql",
