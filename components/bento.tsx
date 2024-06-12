@@ -232,8 +232,8 @@ const features = [
               src="/images/githubstar.webp"
               alt="GitHub logo"
               className="h-14 w-14"
-              width={200}
-              height={200}
+              width={640}
+              height={640}
               priority
             />
           </div>
