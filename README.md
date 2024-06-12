@@ -4,6 +4,12 @@
 
 An ultra-modern, bento-box styled portfolio landing page using Next.js, MagicUI, Shadcn/ui, and Tailwind CSS.
 
+## TODO:
+
+- [ ] Add a Pocketbase schema
+- [ ] Add Pocketbase configuration instructions
+- [ ] Add a footer?
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -18,7 +18,7 @@ import { toast } from "@/components/ui/use-toast";
 import PocketBase from "pocketbase";
 
 // Initialize PocketBase client
-const pb = new PocketBase(`https://engage-dev.com/pb`);
+const pb = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_URL);
 
 // Define the form schema with email validation
 const FormSchema = z.object({
@@ -47,7 +47,9 @@ export function EmailForm() {
               </code>
             </pre>
 
-            <p className="">We&apos;ll be in touch soon.</p>
+            <p className="font-semibold text-lg">
+              We&apos;ll be in touch soon.
+            </p>
           </>
         ),
       });
@@ -83,7 +85,7 @@ export function EmailForm() {
                 {/* Please enter your email address. */}
                 {/* </FormDescription> */}
                 <div className="absolute -bottom-6 z-[-1]">
-                  <FormMessage className="text-red-500" />
+                  <FormMessage className="" />
                 </div>
               </FormItem>
             )}
