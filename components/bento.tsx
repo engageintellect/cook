@@ -181,7 +181,7 @@ const features = [
     name: "AI Integrations",
     description: "Generative UIs, LLMs, Transformers, and more.",
     href: "https://bento.engage-dev.com/tags/ai",
-    cta: "Learn more",
+    cta: "Visit AI projects",
     className: "col-span-3 lg:col-span-2",
     background: (
       <AnimatedBeamMultipleOutputs className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
