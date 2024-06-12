@@ -114,6 +114,11 @@ const config = {
               transform: "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
           },
         },
+        
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,6 +129,8 @@ const config = {
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         meteor: "meteor 5s linear infinite",
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
+        grid: "grid 15s linear infinite",
+
 
 
 

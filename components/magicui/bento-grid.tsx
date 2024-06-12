@@ -67,7 +67,9 @@ const BentoCard = ({
           {name}
         </h3>
       </div>
-      <p className="max-w-lg text-neutral-500">{description}</p>
+      <p className="max-w-lg text-neutral-500 dark:text-neutral-400 dark:drop-shadow">
+        {description}
+      </p>
     </div>
 
     <div

@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="flex flex-col items-start justify-center h-full overflow-hidden p-6 z-50">
         <WordPullUp words="Let's Cook" />
 
-        <div className="text-lg text-neutral-500 lg:px-1 w-full ">
+        <div className="text-lg text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
           <BlurIn className="w-2/3">
             building full-stack applications with focuses in generative AI,
             automation, user experience, and performance.

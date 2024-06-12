@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
+import RetroGrid from "@/components/magicui/retro-grid";
 import BlurIn from "@/components/magicui/blur-in";
 import { FadeIn } from "@/components/magicui/fade-in";
 import Technologies from "@/components/technologies";
@@ -224,8 +226,8 @@ const features = [
     background: (
       // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
 
-      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4">
-        <div className="text-8xl font-semibold  w-full flex justify-center items-center h-2/3  group-hover:-translate-y-2 transition-all duration-300">
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] group-hover:scale-110 group-hover:-translate-y-4">
+        <div className="text-7xl font-semibold  w-full flex justify-center items-center h-2/3  group-hover:-translate-y-2 transition-all duration-300">
           <div className="flex items-center gap-2">
             <GitHubStars />
             <Image
@@ -244,19 +246,46 @@ const features = [
 
   {
     Icon: "",
-    name: "Let's do this.",
-    description: "Enter your email to get started.",
+    name: "",
+    description: "",
     className: "col-span-3 lg:col-span-2",
-    href: "/",
-    cta: "Learn more",
+    href: "",
+    cta: "",
     background: (
       // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
 
-      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]">
-        <div className="text-8xl font-semibold  w-full flex justify-center items-center h-2/3 transition-all duration-300">
-          <InputWithButton />
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_0%)]">
+        <div className="absolute inset-0 z-50 flex justify-center items-center gap-5 p-5">
+          <div className="max-w-sm w-full flex flex-col gap-2">
+            <div className="text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-center">
+              <BlurIn duration={0.5} className="h-full">
+                get in touch.
+              </BlurIn>
+            </div>
+            <div className="w-full flex justify-center text-neutral-500 dark:text-neutral-400">
+              Leave your email to get the conversation started.
+            </div>
+            <div className="mt-5">
+              <InputWithButton />
+            </div>
+          </div>
         </div>
+
+        <RetroGrid />
+
+        {/* <AnimatedGridPattern
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+          className={cn(
+            "absolute inset-0",
+            "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          )}
+        /> */}
       </div>
+
       // <Calendar
       // mode="single"
       // selected={new Date(2022, 4, 11, 0, 0, 0)}
