@@ -18,7 +18,8 @@ import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Marquee from "@/components/magicui/marquee";
 import { formatTagString } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import { InputWithButton } from "./ui/input-with-button";
+import { InputWithButton } from "@/components/ui/input-with-button";
+import { EmailForm } from "@/components/email-form";
 
 const fetchStars = async (): Promise<number> => {
   const baseUrl =
@@ -266,7 +267,7 @@ const features = [
               Leave your email to get the conversation started.
             </div>
             <div className="mt-5">
-              <InputWithButton />
+              <EmailForm />
             </div>
           </div>
         </div>
