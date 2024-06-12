@@ -166,7 +166,7 @@ const features = [
     name: "Technologies",
     description: "Using the latest technologies to power your projects.",
     href: "/technologies",
-    cta: "Learn more",
+    cta: "View all technologies",
     className: "col-span-3 lg:col-span-2",
     background: (
       <div className="absolute right-0 top-0 w-[70%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-y-12 group-hover:scale-110">
