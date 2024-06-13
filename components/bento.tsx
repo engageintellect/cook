@@ -50,6 +50,11 @@ const files = [
     name: "AI",
     body: "Create intelligent, context-aware applications that understand your unique data.",
   },
+
+  {
+    name: "API",
+    body: "Create APIs that power your applications.",
+  },
 ];
 
 interface Item {
