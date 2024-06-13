@@ -13,8 +13,11 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 - zod
 - pocketbase
 - react-hook-form
+- umami analytics
 
 ## TODO:
+
+**NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
 
 - [ ] Add a Pocketbase schema
 - [ ] Add Pocketbase configuration instructions
