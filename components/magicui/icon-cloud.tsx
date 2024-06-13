@@ -1,7 +1,7 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
+import { useTheme } from "next-themes";
 import {
   Cloud,
   fetchSimpleIcons,
@@ -36,7 +36,11 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+export const renderCustomIcon = (
+  icon: SimpleIcon,
+  theme: string,
+  liveLinks: boolean
+) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -47,21 +51,32 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
     fallbackHex,
     minContrastRatio,
     size: 42,
-    aProps: {
-      href: `https://bento.engage-dev.com/tags/${icon.slug}`, // Replace `example.com` with your base URL
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
+    aProps: liveLinks
+      ? {
+          href: `https://bento.engage-dev.com/tags/${icon.slug}`,
+          target: "_blank",
+          rel: "noopener noreferrer",
+        }
+      : {
+          href: undefined,
+          target: undefined,
+          rel: undefined,
+          onClick: (e: any) => e.preventDefault(),
+        },
   });
 };
 
 export type DynamicCloudProps = {
   iconSlugs: string[];
+  liveLinks?: boolean;
 };
 
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
-export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
+export default function IconCloud({
+  iconSlugs,
+  liveLinks = true,
+}: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
   const { theme } = useTheme();
 
@@ -73,9 +88,9 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light")
+      renderCustomIcon(icon, theme || "light", liveLinks)
     );
-  }, [data, theme]);
+  }, [data, theme, liveLinks]);
 
   return (
     // @ts-ignore

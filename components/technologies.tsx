@@ -1,3 +1,4 @@
+import React from "react";
 import IconCloud from "@/components/magicui/icon-cloud";
 
 const slugs = [
@@ -48,10 +49,14 @@ const slugs = [
   "digitalocean",
 ];
 
-export default function Technologies() {
+interface TechnologiesProps {
+  liveLinks?: boolean;
+}
+
+export default function Technologies({ liveLinks = false }: TechnologiesProps) {
   return (
     <div className="max-w-1/2 w-full">
-      <IconCloud iconSlugs={slugs} />
+      <IconCloud iconSlugs={slugs} liveLinks={liveLinks} />
     </div>
   );
 }
