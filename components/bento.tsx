@@ -236,15 +236,15 @@ const features = [
       // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
 
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] group-hover:scale-110 group-hover:-translate-y-4">
-        <div className="text-7xl font-semibold  w-full flex justify-center items-center h-2/3  group-hover:-translate-y-2 transition-all duration-300">
+        <div className="text-7xl font-semibold w-full flex justify-center items-center h-2/3 group-hover:-translate-y-2 transition-all duration-300">
           <div className="flex items-center gap-2">
             <GitHubStars />
             <Image
               src="/images/githubstar.webp"
               alt="GitHub logo"
               className="h-14 w-14"
-              width={640}
-              height={640}
+              width={56}
+              height={56}
               priority
             />
           </div>
