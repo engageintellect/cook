@@ -8,6 +8,7 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 
 **NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
 
+- [ ] Improve lighthouse performance score by optimizing hero header image and minifying unused code.
 - [ ] Add a Pocketbase schema
 - [ ] Add Pocketbase configuration instructions
 - [ ] Add a footer?
