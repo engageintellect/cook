@@ -64,6 +64,7 @@ export const renderCustomIcon = (
           target: undefined,
           rel: undefined,
           onClick: (e: any) => e.preventDefault(),
+          style: { cursor: "pointer" },
         },
   });
 };

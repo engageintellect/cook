@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import PocketBase from "pocketbase";
+import { SendHorizonal } from "lucide-react";
 
 // Initialize PocketBase client
 const pb = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_URL);
@@ -83,8 +84,14 @@ export function EmailForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="text-base">
-            Submit
+
+          <Button
+            type="submit"
+            variant="default"
+            className="flex items-center gap-2 w-fit text-base"
+          >
+            <div></div>
+            <SendHorizonal className="mr-2 h-5 w-5" />
           </Button>
         </div>
       </form>

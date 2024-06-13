@@ -57,7 +57,7 @@ interface TechnologiesProps {
 
 export default function Technologies({ liveLinks = false }: TechnologiesProps) {
   return (
-    <div className="max-w-1/2 w-full">
+    <div className="">
       <IconCloud iconSlugs={slugs} liveLinks={liveLinks} />
     </div>
   );
