@@ -10,6 +10,8 @@ import {
   SimpleIcon,
 } from "react-icon-cloud";
 
+import { sanitizeSlug } from "@/lib/utils";
+
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
     style: {
@@ -53,12 +55,12 @@ export const renderCustomIcon = (
     size: 42,
     aProps: liveLinks
       ? {
-          href: `https://bento.engage-dev.com/tags/${icon.slug}`,
+          href: `https://bento.engage-dev.com/tags/${sanitizeSlug(icon.slug)}`,
           target: "_blank",
           rel: "noopener noreferrer",
         }
       : {
-          href: `https://bento.engage-dev.com/tags/${icon.slug}`,
+          href: `https://bento.engage-dev.com/tags/${sanitizeSlug(icon.slug)}`,
           target: undefined,
           rel: undefined,
           onClick: (e: any) => e.preventDefault(),

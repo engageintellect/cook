@@ -9,3 +9,16 @@ export function cn(...inputs: ClassValue[]) {
 export function formatTagString(tag: string) {
   return tag.replaceAll(" ", "-").toLowerCase()
 }
+
+export function sanitizeSlug(slug: string): string {
+  const replacements: { [key: string]: string } = {
+    nodedotjs: "nodejs",
+    nextdotjs: "nextjs",
+    // Add more replacements as needed
+  };
+
+  return replacements[slug] || slug;
+}
+
+
+

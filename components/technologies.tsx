@@ -47,6 +47,8 @@ const slugs = [
   "django",
   "drizzle",
   "digitalocean",
+  "zod",
+  "apple",
 ];
 
 interface TechnologiesProps {
