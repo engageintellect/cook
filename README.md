@@ -6,15 +6,17 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 
 ## Technologies:
 
-- [next.js](https://nextjs.org/) - React framework
-- [magic-ui](https://magicui.design) - A modern, minimalistic UI library
-- [shadcn/ui](https://ui.shadcn.com/) - A modern, minimalistic UI library
-- [tailwind css](https://tailwindcss.com) - A utility-first CSS framework
-- [zod](https://zod.dev) - TypeScript-first schema declaration and validation
-- [pocketbase](https://pocketbase.io) - A modern, minimalistic database
-- [react-hook-form](https://www.react-hook-form.com/) - Performant, flexible and extensible forms with easy-to-use validation
-- [vercel](https://vercel.com) - Deploy web projects with ease
-- [umami analytics](https://umami.is/) - A simple, fast, and privacy-focused website analytics alternative to Google Analytics
+| Name                                                | Description                                                                           |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [next.js](https://nextjs.org/)                      | React framework                                                                       |
+| [magic-ui](https://magicui.design)                  | A modern, minimalistic UI library                                                     |
+| [shadcn/ui](https://ui.shadcn.com/)                 | A modern, minimalistic UI library                                                     |
+| [tailwind css](https://tailwindcss.com)             | A utility-first CSS framework                                                         |
+| [zod](https://zod.dev)                              | TypeScript-first schema declaration and validation                                    |
+| [pocketbase](https://pocketbase.io)                 | A modern, minimalistic database                                                       |
+| [react-hook-form](https://www.react-hook-form.com/) | Performant, flexible and extensible forms with easy-to-use validation                 |
+| [vercel](https://vercel.com)                        | Deploy web projects with ease                                                         |
+| [umami analytics](https://umami.is/)                | A simple, fast, and privacy-focused website analytics alternative to Google Analytics |
 
 ## TO-DO:
 
