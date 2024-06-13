@@ -46,7 +46,6 @@ export function EmailForm() {
                 {record.email}
               </code>
             </pre>
-
             <p className="font-semibold text-lg">
               We&apos;ll be in touch soon.
             </p>
@@ -73,7 +72,6 @@ export function EmailForm() {
             name="email"
             render={({ field }) => (
               <FormItem className="w-full relative">
-                {/* <FormLabel>Email</FormLabel> */}
                 <FormControl className="w-full">
                   <Input
                     className="w-full border-neutral-500"
@@ -81,11 +79,8 @@ export function EmailForm() {
                     {...field}
                   />
                 </FormControl>
-                {/* <FormDescription> */}
-                {/* Please enter your email address. */}
-                {/* </FormDescription> */}
                 <div className="absolute -bottom-6 z-[-1]">
-                  <FormMessage className="" />
+                  <FormMessage />
                 </div>
               </FormItem>
             )}
