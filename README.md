@@ -6,16 +6,16 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 
 ## Technologies:
 
-- next.js
-- magic-ui
-- shadcn/ui
-- tailwind css
-- zod
-- pocketbase
-- react-hook-form
-- umami analytics
+- [next.js](https://nextjs.org/)
+- [magic-ui](https://magicui.design)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [tailwind css](https://tailwindcss.com)
+- [zod](https://zod.dev)
+- [pocketbase](https://pocketbase.io)
+- [react-hook-form](https://www.react-hook-form.com/)
+- [umami analytics](https://umami.is/)
 
-## TODO:
+## TO-DO:
 
 **NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
 
@@ -27,12 +27,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, let's clone the repository and install the dependencies:
 
 ```bash
 git clone https://github.com/engageintellect/cook.git
 cd cook
 ```
+
+Then, we can install the dependencies and start the development server:
 
 ```bash
 pnpm i && pnpm run dev
