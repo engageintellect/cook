@@ -267,7 +267,7 @@ const features = [
               Leave your email to get the conversation started. We&apos;ll be in
               touch soon. Your email will never be shared with anyone.
             </div>
-            <div className="mt-5">
+            <div className="mt-3">
               <EmailForm />
             </div>
           </div>
