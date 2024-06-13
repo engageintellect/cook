@@ -7,10 +7,8 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -74,7 +72,7 @@ export function EmailForm() {
               <FormItem className="w-full relative">
                 <FormControl className="w-full">
                   <Input
-                    className="w-full border-neutral-500"
+                    className="w-full border-neutral-500 text-base" // Ensure font size is at least 16px
                     placeholder="email@domain.com"
                     {...field}
                   />
@@ -85,7 +83,9 @@ export function EmailForm() {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="text-base">
+            Submit
+          </Button>
         </div>
       </form>
     </Form>
