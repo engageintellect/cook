@@ -258,13 +258,14 @@ const features = [
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_0%)]">
         <div className="absolute inset-0 z-50 flex justify-center items-center gap-5 p-5">
           <div className="max-w-sm w-full flex flex-col gap-2">
-            <div className="text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-center">
+            <div className="text-5xl lg:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
               <BlurIn duration={0.5} className="h-full">
-                get in touch.
+                Get in touch.
               </BlurIn>
             </div>
             <div className="w-full flex justify-center text-neutral-500 dark:text-neutral-400">
-              Leave your email to get the conversation started.
+              Leave your email to get the conversation started. We&apos;ll be in
+              touch soon. Your email will never be shared with anyone.
             </div>
             <div className="mt-5">
               <EmailForm />
