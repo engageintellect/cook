@@ -58,7 +58,7 @@ export const renderCustomIcon = (
           rel: "noopener noreferrer",
         }
       : {
-          href: undefined,
+          href: `https://bento.engage-dev.com/tags/${icon.slug}`,
           target: undefined,
           rel: undefined,
           onClick: (e: any) => e.preventDefault(),
