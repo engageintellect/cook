@@ -4,6 +4,14 @@
 
 An ultra-modern, bento-box styled portfolio landing page for developers, designers, and other creatives.
 
+## TO-DO:
+
+**NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
+
+- [ ] Add a Pocketbase schema
+- [ ] Add Pocketbase configuration instructions
+- [ ] Add a footer?
+
 ## Current Lighthouse Scores:
 
 If you would like to help improve the performance, accessibility, best practices, and SEO of this project, please check out the issues tab for a list of tasks that need to be completed.
@@ -28,14 +36,6 @@ If you would like to help improve the performance, accessibility, best practices
 | [react-hook-form](https://www.react-hook-form.com/) | Performant, flexible and extensible forms with easy-to-use validation                 |
 | [vercel](https://vercel.com)                        | Deploy web projects with ease                                                         |
 | [umami analytics](https://umami.is/)                | A simple, fast, and privacy-focused website analytics alternative to Google Analytics |
-
-## TO-DO:
-
-**NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
-
-- [ ] Add a Pocketbase schema
-- [ ] Add Pocketbase configuration instructions
-- [ ] Add a footer?
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
