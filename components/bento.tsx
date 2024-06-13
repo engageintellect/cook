@@ -125,6 +125,9 @@ const features = [
             width={200}
             height={200}
             priority
+            quality={75} // Adjust quality for optimization
+            placeholder="blur" // Placeholder to improve perceived performance
+            blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
           />
         </BlurIn>
       </div>
