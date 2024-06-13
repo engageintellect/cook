@@ -4,6 +4,17 @@
 
 An ultra-modern, bento-box styled portfolio landing page for developers, designers, and other creatives.
 
+## Current Lighthouse Scores:
+
+If you would like to help improve the performance, accessibility, best practices, and SEO of this project, please check out the issues tab for a list of tasks that need to be completed.
+
+| Metric         | Score |
+| -------------- | ----- |
+| Performance    | 98%   |
+| Accessibility  | 100%  |
+| Best Practices | 100%  |
+| SEO            | 100%  |
+
 ## Technologies:
 
 | Name                                                | Description                                                                           |
