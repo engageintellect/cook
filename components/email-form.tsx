@@ -14,7 +14,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import PocketBase from "pocketbase";
-import { SendHorizonal } from "lucide-react";
+import { SendHorizonal, LoaderCircle } from "lucide-react";
+
+import { useState } from "react";
 
 // Initialize PocketBase client
 const pb = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_URL);
@@ -25,6 +27,7 @@ const FormSchema = z.object({
 });
 
 export function EmailForm() {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -33,6 +36,7 @@ export function EmailForm() {
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
+    setIsLoading(true); // Set loading state to true
     try {
       const record = await pb.collection("cook_form_submissions").create(data);
       toast({
@@ -59,6 +63,8 @@ export function EmailForm() {
         title: "Failed to submit email. It may already exist.",
         description: "Please try again.",
       });
+    } finally {
+      setIsLoading(false); // Set loading state to false after the request is complete
     }
   }
 
@@ -89,9 +95,13 @@ export function EmailForm() {
             type="submit"
             variant="default"
             className="flex items-center gap-2 w-fit text-base"
+            disabled={isLoading} // Disable button when loading
           >
-            <div></div>
-            <SendHorizonal className="mr-2 h-5 w-5" />
+            {isLoading ? (
+              <LoaderCircle className="h-5 w-5 animate-spin" /> // Replace with your spinner component
+            ) : (
+              <SendHorizonal className="h-5 w-5" />
+            )}
           </Button>
         </div>
       </form>

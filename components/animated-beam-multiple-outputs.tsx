@@ -76,6 +76,8 @@ export function AnimatedBeamMultipleOutputs({
       </div>
 
       {/* AnimatedBeams */}
+
+      {/* div1 to div6 */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div1Ref}
@@ -84,33 +86,97 @@ export function AnimatedBeamMultipleOutputs({
       />
       <AnimatedBeam
         containerRef={containerRef}
+        fromRef={div1Ref}
+        toRef={div6Ref}
+        duration={3}
+        delay={1}
+        reverse
+      />
+
+      {/* div2 to div6 */}
+      <AnimatedBeam
+        containerRef={containerRef}
         fromRef={div2Ref}
         toRef={div6Ref}
         duration={3}
       />
+
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div2Ref}
+        toRef={div6Ref}
+        duration={3}
+        delay={0.75}
+        reverse
+      />
+
+      {/* div3 to div6 */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div3Ref}
         toRef={div6Ref}
         duration={3}
       />
+
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div3Ref}
+        toRef={div6Ref}
+        duration={3}
+        delay={1.25}
+        reverse
+      />
+
+      {/* div4 to div6 */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div4Ref}
         toRef={div6Ref}
         duration={3}
       />
+
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div4Ref}
+        toRef={div6Ref}
+        duration={3}
+        delay={1}
+        reverse
+      />
+
+      {/* div5 to div6 */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div5Ref}
         toRef={div6Ref}
         duration={3}
       />
+
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div5Ref}
+        toRef={div6Ref}
+        duration={3}
+        delay={1.5}
+        reverse
+      />
+
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div7Ref}
         duration={3}
+        curvature={-20}
+      />
+
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div7Ref}
+        toRef={div6Ref}
+        duration={3}
+        reverse
+        curvature={20}
+        delay={1.5}
       />
     </div>
   );
