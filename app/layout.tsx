@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "engage-cook",
