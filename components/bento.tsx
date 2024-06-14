@@ -161,7 +161,7 @@ const features = [
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-medium dark:text-white ">
+                <figcaption className="text-sm font-bold dark:text-white ">
                   {f.name}
                 </figcaption>
               </div>
@@ -180,7 +180,7 @@ const features = [
     cta: "View all technologies",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 w-[70%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-y-12 group-hover:scale-110">
+      <div className="absolute right-0 top-0 w-[70%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] lg:[mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-y-12 group-hover:scale-110">
         <FadeIn direction="up">
           <Technologies />
         </FadeIn>
@@ -195,7 +195,7 @@ const features = [
     cta: "Visit AI projects",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <AnimatedBeamMultipleOutputs className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+      <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] lg:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
