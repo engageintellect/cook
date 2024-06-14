@@ -17,9 +17,9 @@ export default function Hero() {
         <WordPullUp words="Let's Cook" />
 
         <div className="text-lg text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
-          <BlurIn className="w-2/3">
-            building full-stack applications with focuses in generative AI,
-            automation, user experience, and performance.
+          <BlurIn className="w-3/4 sm:w-2/3">
+            I build fullstack web applications with focuses in Generative AI,
+            Data Visualization, Crypto/Finance, and User Experience.
           </BlurIn>
 
           <FadeIn direction="down" className="my-class">
@@ -32,10 +32,10 @@ export default function Hero() {
                 <Button
                   variant="default"
                   size="lg"
-                  className="flex items-center gap-2 w-full "
+                  className="flex items-center gap-2 w-full group/Github"
                 >
                   <div>GitHub</div>
-                  <Github className="mr-2 h-5 w-5" />
+                  <Github className="h-5 w-5 lg:group-hover/Github:translate-x-1 transition-all duration-300" />
                 </Button>
               </a>
 
@@ -47,10 +47,10 @@ export default function Hero() {
                 <Button
                   variant="default"
                   size="lg"
-                  className="flex items-center gap-2 w-full"
+                  className="flex items-center gap-2 w-full group/Mail"
                 >
                   <div>Contact</div>
-                  <Mail className="mr-2 h-5 w-5" />
+                  <Mail className="h-5 w-5 lg:group-hover/Mail:translate-x-1 transition-all duration-300" />
                 </Button>
               </a>
             </div>

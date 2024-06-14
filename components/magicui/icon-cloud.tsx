@@ -55,12 +55,12 @@ export const renderCustomIcon = (
     size: 42,
     aProps: liveLinks
       ? {
-          href: `https://bento.engage-dev.com/tags/${sanitizeSlug(icon.slug)}`,
+          href: `${process.env.PORTFOLIO_URL}/tags/${sanitizeSlug(icon.slug)}`,
           target: "_blank",
           rel: "noopener noreferrer",
         }
       : {
-          href: `https://bento.engage-dev.com/tags/${sanitizeSlug(icon.slug)}`,
+          href: `${process.env.PORTFOLIO_URL}/tags/${sanitizeSlug(icon.slug)}`,
           target: undefined,
           rel: undefined,
           onClick: (e: any) => e.preventDefault(),

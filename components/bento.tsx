@@ -111,7 +111,7 @@ const features = [
     name: "I'm Josh",
     description: "Fullstack Developer, AI, Penetration Testing, and more. ",
     className: "col-span-3 lg:col-span-1",
-    href: "https://bento.engage-dev.com",
+    href: `${process.env.PORTFOLIO_URL}`,
     cta: "Visit portfolio",
     background: (
       <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
@@ -138,7 +138,7 @@ const features = [
     Icon: "",
     name: "Project Domain",
     description: "AI, Web, Commerce, Finance.",
-    href: "https://bento.engage-dev.com/projects",
+    href: `${process.env.PORTFOLIO_URL}/projects`,
     cta: "View projects",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -148,7 +148,7 @@ const features = [
       >
         {files.map((f, idx) => (
           <a
-            href={`https://bento.engage-dev.com/tags/${formatTagString(
+            href={`${process.env.PORTFOLIO_URL}/tags/${formatTagString(
               f.name
             )}`}
             key={idx}
@@ -191,7 +191,7 @@ const features = [
     Icon: "",
     name: "AI Integrations",
     description: "Generative UIs, LLMs, Transformers, and more.",
-    href: "https://bento.engage-dev.com/tags/ai",
+    href: `${process.env.PORTFOLIO_URL}/tags/ai`,
     cta: "Visit AI projects",
     className: "col-span-3 lg:col-span-2",
     background: (
@@ -201,7 +201,7 @@ const features = [
   {
     Icon: "",
     name: "Seamless Deployments",
-    description: "push, build, deploy.",
+    description: "Push, build, deploy.",
     className: "col-span-3 lg:col-span-1",
     href: "/",
     cta: "Learn more",
