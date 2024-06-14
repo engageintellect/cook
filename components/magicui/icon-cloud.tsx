@@ -58,7 +58,7 @@ export const renderCustomIcon = (
           href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${sanitizeSlug(
             icon.slug
           )}`,
-          target: "_blank",
+          target: "",
           rel: "noopener noreferrer",
         }
       : {

@@ -111,7 +111,7 @@ const features = [
     name: "I'm Josh",
     description: "Fullstack Developer, AI, Penetration Testing, and more. ",
     className: "col-span-3 lg:col-span-1",
-    href: `${process.env.PORTFOLIO_URL}`,
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}`,
     cta: "Visit portfolio",
     background: (
       <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
@@ -138,7 +138,7 @@ const features = [
     Icon: "",
     name: "Project Domain",
     description: "AI, Web, Commerce, Finance.",
-    href: `${process.env.PORTFOLIO_URL}/projects`,
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/projects`,
     cta: "View projects",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -148,9 +148,9 @@ const features = [
       >
         {files.map((f, idx) => (
           <a
-            href={`${process.env.PORTFOLIO_URL}/tags/${formatTagString(
-              f.name
-            )}`}
+            href={`${
+              process.env.NEXT_PUBLIC_PORTFOLIO_URL
+            }/tags/${formatTagString(f.name)}`}
             key={idx}
             className={cn(
               "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
@@ -191,7 +191,7 @@ const features = [
     Icon: "",
     name: "AI Integrations",
     description: "Generative UIs, LLMs, Transformers, and more.",
-    href: `${process.env.PORTFOLIO_URL}/tags/ai`,
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/ai`,
     cta: "Visit AI projects",
     className: "col-span-3 lg:col-span-2",
     background: (
