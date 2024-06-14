@@ -55,12 +55,16 @@ export const renderCustomIcon = (
     size: 42,
     aProps: liveLinks
       ? {
-          href: `${process.env.PORTFOLIO_URL}/tags/${sanitizeSlug(icon.slug)}`,
+          href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${sanitizeSlug(
+            icon.slug
+          )}`,
           target: "_blank",
           rel: "noopener noreferrer",
         }
       : {
-          href: `${process.env.PORTFOLIO_URL}/tags/${sanitizeSlug(icon.slug)}`,
+          href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${sanitizeSlug(
+            icon.slug
+          )}`,
           target: undefined,
           rel: undefined,
           onClick: (e: any) => e.preventDefault(),
