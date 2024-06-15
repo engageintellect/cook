@@ -23,7 +23,10 @@ const pb = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_URL);
 
 // Define the form schema with email validation
 const FormSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address." }),
+  email: z
+    .string()
+    .email({ message: "Please enter a valid email address." })
+    .transform((email) => email.toLowerCase()),
 });
 
 export function EmailForm() {
