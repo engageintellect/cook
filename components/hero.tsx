@@ -16,8 +16,8 @@ export default function Hero() {
 
         <div className="text-lg text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
           <BlurIn className="w-3/4 sm:w-2/3">
-            I build fullstack applications that focuses on Generative AI,
-            Data Visualization, Crypto/Finance, and User Experience.
+            I build fullstack experiences. With a focus on Generative AI,
+            Data Visualization, Crypto/Finance, and UI/UX.
           </BlurIn>
 
           <FadeIn direction="down" className="my-class">
@@ -47,7 +47,7 @@ export default function Hero() {
                   size="lg"
                   className="flex items-center gap-2 w-full group/Mail"
                 >
-                  <div>Contact</div>
+                  <div>Email Me</div>
                   <Mail className="h-5 w-5 lg:group-hover/Mail:translate-x-1 transition-all duration-300" />
                 </Button>
               </a>

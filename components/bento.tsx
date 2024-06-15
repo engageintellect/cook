@@ -118,9 +118,7 @@ const ProjectPosts = () => {
     getPosts();
   }, []);
 
-  return (
-    <ProjectShowcaseVertical projects={files} />
-  );
+  return <ProjectShowcaseVertical projects={files} />;
 };
 
 const features = [
@@ -133,7 +131,10 @@ const features = [
     className: "col-span-3 md:col-span-2",
     background: (
       <>
-        <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out">
+        <div
+          id="hero"
+          className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out"
+        >
           <Hero />
         </div>
 
@@ -148,27 +149,52 @@ const features = [
   {
     Icon: "",
     name: "I'm Josh",
-    description: "Fullstack Developer, AI, Penetration Testing, and more. ",
+    description:
+      "software engineer & open-source contributor focused in gen-ai, web, linux servers, pentesting, and finance.",
     className: "col-span-3 md:col-span-1",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}`,
     cta: "Visit portfolio",
     background: (
-      <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)] group-hover:scale-105">
-        <BlurIn duration={0.5} className="h-full">
-          <Image
-            className="object-cover object-center h-full w-full"
-            src={
-              process.env.AVATAR_URL || "https://github.com/engageintellect.png"
-            }
-            alt="avatar image"
-            width={200}
-            height={200}
-            priority
-            quality={75} // Adjust quality for optimization
-            placeholder="blur" // Placeholder to improve perceived performance
-            blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
-          />
-        </BlurIn>
+      <div>
+        <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_50%)] group-hover:scale-105">
+          <BlurIn duration={0.5} className="h-full">
+            <Image
+              className="object-cover object-center h-full w-full"
+              src={
+                process.env.AVATAR_URL ||
+                "https://github.com/engageintellect.png"
+              }
+              alt="avatar image"
+              width={200}
+              height={200}
+              priority
+              quality={75} // Adjust quality for optimization
+              placeholder="blur" // Placeholder to improve perceived performance
+              blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
+            />
+          </BlurIn>
+        </div>
+
+        {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true" ? (
+          <FadeIn
+            direction="right"
+            framerProps={{
+              show: { transition: { delay: 1.5 } },
+            }}
+          >
+            <a
+              href={`${process.env.NEXT_PUBLIC_DISCORD}`}
+              className="absolute top-2 right-2 bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit"
+            >
+              <div className="flex items-center gap-2">
+                <div className="bg-emerald-500 w-3 h-3 rounded-full animate-pulse"></div>
+                <div className="">available</div>
+              </div>
+            </a>
+          </FadeIn>
+        ) : (
+          ""
+        )}
       </div>
     ),
   },
@@ -212,12 +238,13 @@ const features = [
   {
     Icon: "",
     name: "Technologies",
-    description: "Using the latest technologies to power your projects.",
+    description:
+      "Using a combination of cutting-edge, and time-tested technologies.",
     href: "/technologies",
     cta: "View all technologies",
     className: "col-span-3 md:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 w-[80%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)] md:[mask-image:linear-gradient(to_top,transparent_45%,#000_70%)] group-hover:-translate-y-5 group-hover:scale-105">
+      <div className="absolute right-0 top-0 w-[80%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] md:[mask-image:linear-gradient(to_top,transparent_50%,#000_70%)] group-hover:-translate-y-5 group-hover:scale-105">
         <FadeIn direction="up">
           <Technologies />
         </FadeIn>
@@ -243,7 +270,7 @@ const features = [
     href: "/",
     cta: "Learn more",
     background: (
-      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105">
+      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_25%,#000_70%)] group-hover:scale-105">
         <Orbit />
       </div>
     ),
@@ -323,7 +350,10 @@ const features = [
     background: (
       // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
 
-      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_0%)]">
+      <div
+        id="contact-form"
+        className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_0%)]"
+      >
         <div className="absolute inset-0 z-50 flex justify-center items-center gap-5 p-5">
           <div className="max-w-sm w-full flex flex-col gap-2">
             <div className="text-5xl md:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
