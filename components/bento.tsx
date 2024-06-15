@@ -326,7 +326,7 @@ const features = [
     description:
       "Here are a few recent projects, using the technologies mentioned above.",
     className: "col-span-3 md:col-span-2",
-    href: `${process.env.PUBLIC_PORTFOLIO_URL}/projects`,
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/projects`,
     cta: "All projects",
     background: (
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
