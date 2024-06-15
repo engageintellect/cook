@@ -92,6 +92,7 @@ export function EmailForm() {
           />
 
           <Button
+            name="submit"
             type="submit"
             variant="default"
             className="flex items-center gap-2 w-fit text-base"
