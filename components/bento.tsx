@@ -103,13 +103,11 @@ const ProjectPosts = () => {
     const getPosts = async () => {
       const postsData = await fetchProjects();
       if (postsData) {
-        console.log("postsData", postsData.postsData);
         const formattedPosts = postsData.postsData.map((post: any) => ({
           name: post.data.title,
           body: post.data.description,
           slug: post.slug,
         }));
-        console.log("formatted", formattedPosts);
         setFiles(formattedPosts.slice(0, 10));
       }
       setPosts(postsData);
