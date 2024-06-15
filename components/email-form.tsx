@@ -92,16 +92,21 @@ export function EmailForm() {
           />
 
           <Button
-            name="submit"
             type="submit"
             variant="default"
             className="flex items-center gap-2 w-fit text-base"
             disabled={isLoading} // Disable button when loading
           >
             {isLoading ? (
-              <LoaderCircle className="h-5 w-5 animate-spin" /> // Replace with your spinner component
+              <div className="flex items-center gap-2">
+                <div>Send</div>
+                <LoaderCircle className="h-5 w-5 animate-spin" />
+              </div>
             ) : (
-              <SendHorizonal className="h-5 w-5" />
+              <div className="flex items-center gap-2">
+                <div>Send</div>
+                <SendHorizonal className="h-5 w-5" />
+              </div>
             )}
           </Button>
         </div>
