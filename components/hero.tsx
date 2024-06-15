@@ -1,10 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
-import ShimmerButton from "./magicui/shimmer-button";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/magicui/fade-in";
 import { Mail, Github } from "lucide-react";
@@ -18,7 +16,7 @@ export default function Hero() {
 
         <div className="text-lg text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
           <BlurIn className="w-3/4 sm:w-2/3">
-            I build fullstack web applications with focuses in Generative AI,
+            I build fullstack applications that focuses on Generative AI,
             Data Visualization, Crypto/Finance, and User Experience.
           </BlurIn>
 
@@ -57,18 +55,7 @@ export default function Hero() {
           </FadeIn>
         </div>
       </div>
-
       <MeteorShower />
-      {/* <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.5}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-        )}
-      /> */}
     </div>
   );
 }

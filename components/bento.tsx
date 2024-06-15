@@ -8,7 +8,6 @@ import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Globe from "@/components/magicui/globe";
 import Marquee from "@/components/magicui/marquee";
 import Technologies from "@/components/technologies";
-import ProjectShowcase from "@/components/project-showcase";
 import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
 import Hero from "@/components/hero";
 import Orbit from "@/components/orbit";
@@ -165,7 +164,7 @@ const features = [
             width={200}
             height={200}
             priority
-            quality={25} // Adjust quality for optimization
+            quality={75} // Adjust quality for optimization
             placeholder="blur" // Placeholder to improve perceived performance
             blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
           />
