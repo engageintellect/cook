@@ -1,5 +1,7 @@
 "use client";
 
+import GlobeAndStars from "@/components/globe-and-stars";
+
 import RetroGrid from "@/components/magicui/retro-grid";
 import BlurIn from "@/components/magicui/blur-in";
 import { FadeIn } from "@/components/magicui/fade-in";
@@ -222,7 +224,7 @@ const features = [
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-bold dark:text-white ">
+                <figcaption className="text-lg font-bold dark:text-white ">
                   {f.name}
                 </figcaption>
               </div>
@@ -283,7 +285,10 @@ const features = [
     href: "/",
     cta: "Learn more",
     background: (
-      <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
+      // <div className="absolute h-full w-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" >
+      <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out  [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 group-hover:-translate-y-4">
+        <GlobeAndStars />
+      </div>
     ),
   },
 
@@ -321,7 +326,7 @@ const features = [
     description:
       "Here are a few recent projects, using the technologies mentioned above.",
     className: "col-span-3 md:col-span-2",
-    href: `${process.env.PUBLIC_PORTFOLIO_URL}/projects`,
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/projects`,
     cta: "All projects",
     background: (
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">

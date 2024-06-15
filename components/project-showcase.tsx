@@ -30,7 +30,7 @@ const ReviewCard = ({
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <a href={`https://bento.engage-dev.com/projects/${slug}`}>
+      <a href={`${process.env.NEXT_LOCAL_PORTFOLIO_URL}/projects/${slug}`}>
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
             <figcaption className="text-sm font-medium dark:text-white">
