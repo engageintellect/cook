@@ -1,25 +1,24 @@
 "use client";
 
-import Image from "next/image";
-
-import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import RetroGrid from "@/components/magicui/retro-grid";
 import BlurIn from "@/components/magicui/blur-in";
 import { FadeIn } from "@/components/magicui/fade-in";
-import Technologies from "@/components/technologies";
-import Hero from "@/components/hero";
-import Globe from "@/components/magicui/globe";
 import NumberTicker from "@/components/magicui/number-ticker";
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+import Globe from "@/components/magicui/globe";
+import Marquee from "@/components/magicui/marquee";
+import Technologies from "@/components/technologies";
+import ProjectShowcase from "@/components/project-showcase";
+import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
+import Hero from "@/components/hero";
 import Orbit from "@/components/orbit";
 import ThemeToggle from "@/components/theme-toggle";
-import { cn } from "@/lib/utils";
-import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
-import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
-import Marquee from "@/components/magicui/marquee";
-import { formatTagString } from "@/lib/utils";
-import { useState, useEffect } from "react";
-import { InputWithButton } from "@/components/ui/input-with-button";
 import { EmailForm } from "@/components/email-form";
+import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
+import { cn } from "@/lib/utils";
+import { formatTagString } from "@/lib/utils";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const fetchStars = async (): Promise<number> => {
   const baseUrl =
@@ -29,31 +28,44 @@ const fetchStars = async (): Promise<number> => {
   return Number(data?.totalStars);
 };
 
-const files = [
+const fetchProjects = async () => {
+  const baseUrl =
+    typeof window !== "undefined" ? "" : process.env.NEXT_PUBLIC_BASE_URL;
+  const res = await fetch(`${baseUrl}/api/fetch-project-posts`);
+  const data = await res.json();
+  return data;
+};
+
+const defaultFiles = [
   {
     name: "Crypto",
     body: "Interface with blockchains, create smart contracts, track market data, manage digital assets.",
+    slug: "crypto",
   },
   {
     name: "Commerce",
     body: "Sell your product or service online.",
+    slug: "commerce",
   },
   {
     name: "Web",
     body: "Create beautiful, responsive, and performant websites.",
+    slug: "web",
   },
   {
     name: "IOT",
     body: "Interface with things around you.",
+    slug: "iot",
   },
   {
     name: "AI",
     body: "Create intelligent, context-aware applications that understand your unique data.",
+    slug: "ai",
   },
-
   {
     name: "API",
     body: "Create APIs that power your applications.",
+    slug: "api",
   },
 ];
 
@@ -84,6 +96,34 @@ const GitHubStars = () => {
   return <NumberTicker value={stars} />;
 };
 
+const ProjectPosts = () => {
+  const [posts, setPosts] = useState<any | null>(null);
+  const [files, setFiles] = useState(defaultFiles);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const postsData = await fetchProjects();
+      if (postsData) {
+        console.log("postsData", postsData.postsData);
+        const formattedPosts = postsData.postsData.map((post: any) => ({
+          name: post.data.title,
+          body: post.data.description,
+          slug: post.slug,
+        }));
+        console.log("formatted", formattedPosts);
+        setFiles(formattedPosts.slice(0, 10));
+      }
+      setPosts(postsData);
+    };
+
+    getPosts();
+  }, []);
+
+  return (
+    <ProjectShowcaseVertical projects={files} />
+  );
+};
+
 const features = [
   {
     Icon: "",
@@ -91,7 +131,7 @@ const features = [
     description: "",
     href: "",
     cta: "",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 md:col-span-2",
     background: (
       <>
         <div className="absolute right-0 top-0 h-full w-full border-none transition-all duration-300 ease-out">
@@ -110,11 +150,11 @@ const features = [
     Icon: "",
     name: "I'm Josh",
     description: "Fullstack Developer, AI, Penetration Testing, and more. ",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 md:col-span-1",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}`,
     cta: "Visit portfolio",
     background: (
-      <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
+      <div className="absolute right-0 top-0 h-3/4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)] group-hover:scale-105">
         <BlurIn duration={0.5} className="h-full">
           <Image
             className="object-cover object-center h-full w-full"
@@ -136,24 +176,22 @@ const features = [
 
   {
     Icon: "",
-    name: "Project Domain",
+    name: "Tech Domain",
     description: "AI, Web, Commerce, Finance.",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/projects`,
     cta: "View projects",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 md:col-span-1",
     background: (
       <Marquee
+        className="absolute h-2/3 top-10 [--duration:40s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] w-full"
         pauseOnHover
-        className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] "
       >
-        {files.map((f, idx) => (
+        {defaultFiles.map((f, idx) => (
           <a
-            href={`${
-              process.env.NEXT_PUBLIC_PORTFOLIO_URL
-            }/tags/${formatTagString(f.name)}`}
+            href={`${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${f.slug}`}
             key={idx}
             className={cn(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "relative w-40 h-full cursor-pointer overflow-hidden rounded-xl border p-4 bg-red-500",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu transition-all duration-300 ease-out hover:blur-none"
@@ -178,9 +216,9 @@ const features = [
     description: "Using the latest technologies to power your projects.",
     href: "/technologies",
     cta: "View all technologies",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 md:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 w-[70%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] lg:[mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-y-12 group-hover:scale-110">
+      <div className="absolute right-0 top-0 w-[80%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)] md:[mask-image:linear-gradient(to_top,transparent_45%,#000_70%)] group-hover:-translate-y-5 group-hover:scale-105">
         <FadeIn direction="up">
           <Technologies />
         </FadeIn>
@@ -193,16 +231,16 @@ const features = [
     description: "Generative UIs, LLMs, Transformers, and more.",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/ai`,
     cta: "Visit AI projects",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 md:col-span-2",
     background: (
-      <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] lg:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105" />
+      <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: "",
     name: "Seamless Deployments",
     description: "Push, build, deploy.",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 md:col-span-1",
     href: "/",
     cta: "Learn more",
     background: (
@@ -217,7 +255,7 @@ const features = [
     name: "Worldwide Reach",
     description:
       "Deploy your projects to any region in the world. on-prem, or in the cloud.",
-    className: "col-span-3 lg:col-span-3",
+    className: "col-span-3 md:col-span-3",
     href: "/",
     cta: "Learn more",
     background: (
@@ -229,7 +267,7 @@ const features = [
     Icon: "",
     name: "GitHub Stars",
     description: "Star this repository to show your support.",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 md:col-span-1",
     href: `${process.env.GITHUB_URL}/${process.env.REPO_NAME}`,
     cta: "Star repository",
     background: (
@@ -255,9 +293,32 @@ const features = [
 
   {
     Icon: "",
+    name: "Project Showcase",
+    description:
+      "Here are a few recent projects, using the technologies mentioned above.",
+    className: "col-span-3 md:col-span-2",
+    href: `${process.env.PUBLIC_PORTFOLIO_URL}/projects`,
+    cta: "All projects",
+    background: (
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
+        <div className="absolute h-full w-full [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)]">
+          <div className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_2%,#000_10%)]">
+            <div className="text-7xl font-semibold w-full flex justify-center items-center h-2/3 transition-all duration-300">
+              <div className="flex items-center gap-2">
+                <ProjectPosts />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  {
+    Icon: "",
     name: "",
     description: "",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 md:col-span-3",
     href: "",
     cta: "",
     background: (
@@ -266,7 +327,7 @@ const features = [
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_0%)]">
         <div className="absolute inset-0 z-50 flex justify-center items-center gap-5 p-5">
           <div className="max-w-sm w-full flex flex-col gap-2">
-            <div className="text-5xl lg:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
+            <div className="text-5xl md:text-6xl font-semibold text-neutral-700 dark:text-neutral-300 w-full flex justify-start">
               <BlurIn duration={0.5} className="h-full">
                 Get in touch.
               </BlurIn>
@@ -282,35 +343,19 @@ const features = [
         </div>
 
         <RetroGrid />
-
-        {/* <AnimatedGridPattern
-          numSquares={30}
-          maxOpacity={0.1}
-          duration={3}
-          repeatDelay={1}
-          className={cn(
-            "absolute inset-0",
-            "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-          )}
-        /> */}
       </div>
-
-      // <Calendar
-      // mode="single"
-      // selected={new Date(2022, 4, 11, 0, 0, 0)}
-      // className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-      // />
     ),
   },
 ];
 
 export function Bento() {
   return (
-    <BentoGrid>
-      {features.map((feature, idx) => (
-        <BentoCard key={idx} {...feature} />
-      ))}
-    </BentoGrid>
+    <>
+      <BentoGrid>
+        {features.map((feature, idx) => (
+          <BentoCard key={idx} {...feature} />
+        ))}
+      </BentoGrid>
+    </>
   );
 }
