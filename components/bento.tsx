@@ -274,7 +274,7 @@ const features = [
     name: "Seamless Deployments",
     description: "Push, build, deploy.",
     className: "col-span-3 md:col-span-1",
-    href: "/",
+    href: "/deployments",
     cta: "Learn more",
     background: (
       <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_25%,#000_70%)] group-hover:scale-105">
@@ -289,7 +289,7 @@ const features = [
     description:
       "Deploy your projects to any region in the world. on-prem, or in the cloud.",
     className: "col-span-3 md:col-span-3",
-    href: "/",
+    href: "/worldwide-reach",
     cta: "Learn more",
     background: (
       // <div className="absolute h-full w-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" >

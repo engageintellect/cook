@@ -1,9 +1,8 @@
 import Technologies from "@/components/technologies";
-import Ripple from "@/components/magicui/ripple"
 
 export default function Tech() {
   return (
-    <div className="flex justify-center w-full max-w-3xl mx-auto p-6">
+    <div className="flex justify-center w-full max-w-2xl mx-auto p-6">
       <div>
         <div className="flex flex-col items-center mt-10">
           <div className="text-4xl font-bold text-center">Technologies</div>
@@ -13,7 +12,6 @@ export default function Tech() {
         </div>
         <Technologies liveLinks={true} />
       </div>
-      <Ripple/>
     </div>
   );
 }

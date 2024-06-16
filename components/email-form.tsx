@@ -99,7 +99,7 @@ export function EmailForm() {
           <Button
             type="submit"
             variant="default"
-            className="flex items-center gap-2 w-fit text-base"
+            className="flex items-center gap-2 w-fit text-base group/Button"
             disabled={isLoading} // Disable button when loading
           >
             {isLoading ? (
@@ -110,7 +110,7 @@ export function EmailForm() {
             ) : (
               <div className="flex items-center gap-2">
                 <div>Send</div>
-                <SendHorizonal className="h-5 w-5" />
+                <SendHorizonal className="h-5 w-5 md:group-hover/Button:translate-x-[2px] transition-all duration-300" />
               </div>
             )}
           </Button>
