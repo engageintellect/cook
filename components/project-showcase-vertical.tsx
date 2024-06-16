@@ -5,6 +5,7 @@ interface Project {
   name: string;
   body: string;
   slug: string;
+  image: string;
 }
 
 interface ProjectShowcaseVerticalProps {
@@ -15,10 +16,12 @@ const ReviewCard = ({
   name,
   body,
   slug,
+  image,
 }: {
   name: string;
   body: string;
   slug: string;
+  image: string;
 }) => {
   return (
     <figure
@@ -33,9 +36,16 @@ const ReviewCard = ({
       <a href={`https://bento.engage-dev.com/projects/${slug}`}>
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
-            <figcaption className="text-lg font-medium dark:text-white">
-              {name}
-            </figcaption>
+            <div className="flex items-start gap-2">
+              {/* <img
+                src={`https://bento.engage-dev.com${image}`}
+                alt={name}
+                className="w-6 h-6 rounded-full object-cover shadow"
+              /> */}
+              <figcaption className="text-lg font-medium dark:text-white">
+                {name}
+              </figcaption>
+            </div>
           </div>
         </div>
         <blockquote className="mt-2 text-sm line-clamp-4 dark:text-white font-thin">

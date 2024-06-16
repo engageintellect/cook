@@ -1,4 +1,5 @@
 import Technologies from "@/components/technologies";
+import Ripple from "@/components/magicui/ripple"
 
 export default function Tech() {
   return (
@@ -12,6 +13,7 @@ export default function Tech() {
         </div>
         <Technologies liveLinks={true} />
       </div>
+      <Ripple/>
     </div>
   );
 }
