@@ -27,7 +27,7 @@ export default async function WorldwideReach() {
               include AWS, Google Cloud, and Azure.
             </div>
 
-            <ul class="list-disc ml-10 mt-2">
+            <ul className="list-disc ml-10 mt-2">
               <li>Vercel</li>
               <li>AWS</li>
               <li>Azure</li>
@@ -55,7 +55,7 @@ export default async function WorldwideReach() {
             <div className="text-2xl font-bold">On-Prem</div>
 
             <div>
-              On-premises deployments are hosted locally on a company's own
+              On-premises deployments are hosted locally on a company&apos;s own
               servers and infrastructure. This approach provides organizations
               with greater control over their data and applications, enabling
               them to meet specific security and compliance requirements. While
