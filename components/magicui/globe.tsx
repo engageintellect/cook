@@ -18,7 +18,7 @@ const GLOBE_CONFIG: COBEOptions = {
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
-  glowColor: [1, 1, 1],
+  glowColor: [0, 0, 0],
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 }, // Manila
     { location: [19.076, 72.8777], size: 0.1 }, // Mumbai
@@ -138,7 +138,7 @@ export default function Globe({
     >
       <canvas
         className={cn(
-          "h-full w-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "h-full w-full opacity-0 transition-opacity duration-500"
         )}
         ref={canvasRef}
         onPointerDown={(e) =>
