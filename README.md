@@ -54,7 +54,7 @@ chmod +x pocketbase
 ./pocketbase serve
 ```
 
-Go to [http://localhost:8080](http://localhost:8080) to see the Pocketbase dashboard. From there, you can import the schema from the `/pb/pb_schema.json` file in the "import collections" tab in the settings menu.
+Go to [http://localhost:8080](http://localhost:8080) to see the Pocketbase dashboard. From there, you can import the schema from the `/pb/pb_schema.json` file in the root of this repository by using the "import collections" tab in the settings menu.
 
 ### Client Setup
 
