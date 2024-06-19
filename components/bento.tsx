@@ -1,25 +1,23 @@
 "use client";
 
-import GlobeAndStars from "@/components/globe-and-stars";
-
-import RetroGrid from "@/components/magicui/retro-grid";
 import BlurIn from "@/components/magicui/blur-in";
 import { FadeIn } from "@/components/magicui/fade-in";
-import NumberTicker from "@/components/magicui/number-ticker";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
-import Globe from "@/components/magicui/globe";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import ThemeToggle from "@/components/theme-toggle";
+import Hero from "@/components/hero";
 import Marquee from "@/components/magicui/marquee";
 import Technologies from "@/components/technologies";
+import GlobeAndStars from "@/components/globe-and-stars";
 import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
-import Hero from "@/components/hero";
+import NumberTicker from "@/components/magicui/number-ticker";
 import Orbit from "@/components/orbit";
-import ThemeToggle from "@/components/theme-toggle";
-import { EmailForm } from "@/components/email-form";
 import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
+import RetroGrid from "@/components/magicui/retro-grid";
+import { EmailForm } from "@/components/email-form";
 import { cn } from "@/lib/utils";
 import { formatTagString } from "@/lib/utils";
-import Image from "next/image";
-import { useState, useEffect } from "react";
 
 const fetchStars = async (): Promise<number> => {
   const baseUrl =
@@ -174,7 +172,7 @@ const features = [
               alt="avatar image"
               width={200}
               height={200}
-              priority
+              priority // Load image immediately
               quality={75} // Adjust quality for optimization
               placeholder="blur" // Placeholder to improve perceived performance
               blurDataURL="data:image/svg+xml;base64,..." // Use a small base64-encoded placeholder image
@@ -182,26 +180,36 @@ const features = [
           </BlurIn>
         </div>
 
-        {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true" ? (
-          <FadeIn
-            direction="right"
-            framerProps={{
-              show: { transition: { delay: 1.5 } },
-            }}
+        <FadeIn
+          direction="right"
+          framerProps={{
+            show: { transition: { delay: 1.5 } },
+          }}
+        >
+          <a
+            href={
+              process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                ? `${process.env.NEXT_PUBLIC_DISCORD}`
+                : "#contact-form"
+            }
+            className="absolute top-2 right-2 bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit"
           >
-            <a
-              href={`${process.env.NEXT_PUBLIC_DISCORD}`}
-              className="absolute top-2 right-2 bg-background rounded-lg px-4 py-2 text-xs text-neutral-500 dark:text-neutral-300 max-w-3/4 w-fit"
-            >
-              <div className="flex items-center gap-2">
-                <div className="bg-emerald-500 w-3 h-3 rounded-full animate-pulse"></div>
-                <div className="">available</div>
+            <div className="flex items-center gap-2">
+              <div
+                className={`w-3 h-3 rounded-full animate-pulse ${
+                  process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                    ? "bg-emerald-400"
+                    : "bg-yellow-400"
+                }`}
+              ></div>
+              <div className="">
+                {process.env.NEXT_PUBLIC_AVAILABLE_FOR_FREELANCE == "true"
+                  ? "available"
+                  : "on engagement"}
               </div>
-            </a>
-          </FadeIn>
-        ) : (
-          ""
-        )}
+            </div>
+          </a>
+        </FadeIn>
       </div>
     ),
   },
@@ -293,7 +301,6 @@ const features = [
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/vercel`,
     cta: "Learn more",
     background: (
-      // <div className="absolute h-full w-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" >
       <div className="absolute w-full h-full right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out  [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 group-hover:-translate-y-4">
         <GlobeAndStars />
       </div>
@@ -308,8 +315,6 @@ const features = [
     href: `${process.env.GITHUB_URL}/${process.env.REPO_NAME}`,
     cta: "Star repository",
     background: (
-      // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
-
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] group-hover:scale-110 group-hover:-translate-y-4">
         <div className="text-7xl font-semibold w-full flex justify-center items-center h-2/3 group-hover:-translate-y-2 transition-all duration-300">
           <div className="flex items-center gap-2">
@@ -359,8 +364,6 @@ const features = [
     href: "",
     cta: "",
     background: (
-      // <Globe className="absolute right-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-110 group-hover:-translate-y-4" />
-
       <div
         id="contact-form"
         className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_0%)]"
