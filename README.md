@@ -8,7 +8,7 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 
 // show image
 
-![Cook Portfolio Preview](/images/thumbnail.png)
+![Cook Portfolio Preview](/public/images/thumbnail.png)
 
 ## TO-DO:
 
