@@ -42,7 +42,22 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, let's clone the repository and install the dependencies:
+## Pocketbase Setup
+
+```bash
+wget https://github.com/pocketbase/pocketbase/releases/download/v0.8.0/pocketbase_0.8.0_linux_amd64.zip
+unzip pocketbase_0.8.0_linux_amd64.zip
+```
+
+```bash
+chmod +x pocketbase
+```
+
+```bash
+./pocketbase serve
+```
+
+## Client Setup
 
 ```bash
 git clone https://github.com/engageintellect/cook.git
