@@ -33,6 +33,8 @@ If you would like to help improve the performance, accessibility, best practices
 
 ## Technologies:
 
+---
+
 | Name                                                                       | Description                                                                           |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | [next.js](https://nextjs.org/)                                             | React framework                                                                       |
@@ -42,13 +44,15 @@ If you would like to help improve the performance, accessibility, best practices
 | [zod](https://zod.dev)                                                     | TypeScript-first schema declaration and validation                                    |
 | [pocketbase](https://pocketbase.io)                                        | A modern, minimalistic database                                                       |
 | [react-hook-form](https://www.react-hook-form.com/)                        | Performant, flexible and extensible forms with easy-to-use validation                 |
-| [Github public API](https://docs.github.com/en/rest?apiVersion=2022-11-28) | A REST API for accessing public Github repo, star, and user image data                |
+| [github public api](https://docs.github.com/en/rest?apiVersion=2022-11-28) | A REST API for accessing public Github repo, star, and user image data                |
 | [vercel](https://vercel.com)                                               | Deploy web projects with ease                                                         |
 | [umami analytics](https://umami.is/)                                       | A simple, fast, and privacy-focused website analytics alternative to Google Analytics |
 
 ## Getting Started
 
-## Pocketbase Setup
+---
+
+### Pocketbase Setup
 
 First, we need to install Pocketbase. You can download the latest release from the [Pocketbase GitHub releases page](https://github.com/pocketbase/pocketbase/releases)
 
@@ -65,7 +69,7 @@ chmod +x pocketbase
 ./pocketbase serve
 ```
 
-## Client Setup
+### Client Setup
 
 ```bash
 git clone https://github.com/engageintellect/cook.git
@@ -76,13 +80,13 @@ Now, let's set our environment variables. Copy `/.env.example` to either `.env` 
 
 Finally, we can install the dependencies and start the development server:
 
-## Run the development server:
+### Run the development server:
 
 ```bash
 pnpm i && pnpm run dev
 ```
 
-## Umami Analytics Setup (Optional)
+### Umami Analytics Setup (Optional)
 
 If you would like to use Umami Analytics, you can sign up for a free account at [umami.is](https://umami.is/). Once you have signed up, you can add your Umami Analytics tracking code to the `app/layout.tsx` file.
 

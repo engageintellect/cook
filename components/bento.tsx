@@ -261,7 +261,8 @@ const features = [
   {
     Icon: "",
     name: "AI Integrations",
-    description: "Generative UIs, LLMs, Transformers, and more.",
+    description:
+      "Generative UIs, LLMs, Transformers, Chatbots, Classification, and more.",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/ai`,
     cta: "Visit AI projects",
     className: "col-span-3 md:col-span-2",
@@ -287,7 +288,7 @@ const features = [
     Icon: "",
     name: "Worldwide Reach",
     description:
-      "Deploy your projects to any region in the world. on-prem, or in the cloud.",
+      "Deploy to any region on earth. On-prem, in the cloud, or to the edge.",
     className: "col-span-3 md:col-span-3",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/vercel`,
     cta: "Learn more",
@@ -373,9 +374,12 @@ const features = [
             </div>
             <div className="w-full flex justify-center text-neutral-500 dark:text-neutral-400">
               Leave your email to get the conversation started. We&apos;ll be in
-              touch soon. Your email will never be shared with anyone.
+              touch soon.
             </div>
-            <div className="mt-3">
+            <div className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+              *Your email will never be shared with anyone.
+            </div>
+            <div className="">
               <EmailForm />
             </div>
           </div>

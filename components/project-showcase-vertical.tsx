@@ -37,11 +37,11 @@ const ReviewCard = ({
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
             <div className="flex items-start gap-2">
-              {/* <img
+              <img
                 src={`https://bento.engage-dev.com${image}`}
                 alt={name}
-                className="w-6 h-6 rounded-full object-cover shadow"
-              /> */}
+                className="w-8 h-8 rounded-lg object-cover shadow"
+              />
               <figcaption className="text-lg font-medium dark:text-white">
                 {name}
               </figcaption>
