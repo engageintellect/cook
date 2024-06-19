@@ -7,13 +7,7 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fengageintellect%2Fcook.git)
 [![Cook Portfolio Preview](/public/images/thumbnail.png)](https://cook.engage-dev.com)
 
-## TO-DO:
-
 **NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
-
-- [ ] Improve lighthouse performance score by optimizing hero header image and minifying unused code.
-- [ ] Add a Pocketbase schema
-- [ ] Add a footer?
 
 ## Current Lighthouse Scores:
 
@@ -59,6 +53,8 @@ chmod +x pocketbase
 ```bash
 ./pocketbase serve
 ```
+
+Go to [http://localhost:8080](http://localhost:8080) to see the Pocketbase dashboard. From there, you can import the schema from the `/pb/pb_schema.json` file in the "import collections" tab in the settings menu.
 
 ### Client Setup
 

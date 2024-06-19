@@ -1,0 +1,28 @@
+[
+  {
+    "id": "jwvcpkb2f322agd",
+    "name": "cook_form_submissions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "axzcm6o8",
+        "name": "email",
+        "type": "email",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "exceptDomains": null,
+          "onlyDomains": null
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  }
+]
