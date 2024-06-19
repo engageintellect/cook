@@ -5,10 +5,7 @@
 An ultra-modern, bento-box styled portfolio landing page for developers, designers, and other creatives.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fengageintellect%2Fcook.git)
-
-![Cook Portfolio Preview](<(/public/images/thumbnail.png)https://cook.engage-dev.com>)
-
-// add image
+[![Cook Portfolio Preview](/public/images/thumbnail.png)](https://engage-dev.com)
 
 ## TO-DO:
 
