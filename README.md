@@ -6,11 +6,9 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fengageintellect%2Fcook.git)
 
-![Cook Portfolio Preview](/public/images/thumbnail.png)
+![Cook Portfolio Preview](/public/images/thumbnail.png)(https://cook.engage-dev.com)
 
 ## TO-DO:
-
----
 
 **NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
 
@@ -19,8 +17,6 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 - [ ] Add a footer?
 
 ## Current Lighthouse Scores:
-
----
 
 If you would like to help improve the performance, accessibility, best practices, and SEO of this project, please check out the issues tab for a list of tasks that need to be completed.
 
@@ -32,8 +28,6 @@ If you would like to help improve the performance, accessibility, best practices
 | SEO            | 100%  |
 
 ## Technologies:
-
----
 
 | Name                                                                       | Description                                                                           |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
@@ -49,8 +43,6 @@ If you would like to help improve the performance, accessibility, best practices
 | [umami analytics](https://umami.is/)                                       | A simple, fast, and privacy-focused website analytics alternative to Google Analytics |
 
 ## Getting Started
-
----
 
 ### Pocketbase Setup
 
