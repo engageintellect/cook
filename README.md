@@ -66,11 +66,15 @@ git clone https://github.com/engageintellect/cook.git
 cd cook
 ```
 
-Then, we can install the dependencies and start the development server:
+Now, let's set our environment variables. Copy `/.env.example` to either `.env` (for prod) or `.env.local` (for dev) in the root of the project and add replace the values with your own.:
+
+Finally, we can install the dependencies and start the development server:
+
+````bash
 
 ```bash
 pnpm i && pnpm run dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
