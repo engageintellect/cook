@@ -27,20 +27,18 @@ If you would like to help improve the performance, accessibility, best practices
 
 ## Technologies:
 
-| Name                                                | Description                                                           |
-| --------------------------------------------------- | --------------------------------------------------------------------- |
-| [next.js](https://nextjs.org/)                      | React framework                                                       |
-| [magic-ui](https://magicui.design)                  | A modern, minimalistic UI library                                     |
-| [shadcn/ui](https://ui.shadcn.com/)                 | A modern, minimalistic UI library                                     |
-| [tailwind css](https://tailwindcss.com)             | A utility-first CSS framework                                         |
-| [zod](https://zod.dev)                              | TypeScript-first schema declaration and validation                    |
-| [pocketbase](https://pocketbase.io)                 | A modern, minimalistic database                                       |
-| [react-hook-form](https://www.react-hook-form.com/) | Performant, flexible and extensible forms with easy-to-use validation |
-
-| [Github public API](https://docs.github.com/en/rest?apiVersion=2022-11-28) | A REST API for accessing public Github repo, star, and user image data |
-
-| [vercel](https://vercel.com) | Deploy web projects with ease |
-| [umami analytics](https://umami.is/) | A simple, fast, and privacy-focused website analytics alternative to Google Analytics |
+| Name                                                                       | Description                                                                           |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [next.js](https://nextjs.org/)                                             | React framework                                                                       |
+| [magic-ui](https://magicui.design)                                         | A modern, minimalistic UI library                                                     |
+| [shadcn/ui](https://ui.shadcn.com/)                                        | A modern, minimalistic UI library                                                     |
+| [tailwind css](https://tailwindcss.com)                                    | A utility-first CSS framework                                                         |
+| [zod](https://zod.dev)                                                     | TypeScript-first schema declaration and validation                                    |
+| [pocketbase](https://pocketbase.io)                                        | A modern, minimalistic database                                                       |
+| [react-hook-form](https://www.react-hook-form.com/)                        | Performant, flexible and extensible forms with easy-to-use validation                 |
+| [Github public API](https://docs.github.com/en/rest?apiVersion=2022-11-28) | A REST API for accessing public Github repo, star, and user image data                |
+| [vercel](https://vercel.com)                                               | Deploy web projects with ease                                                         |
+| [umami analytics](https://umami.is/)                                       | A simple, fast, and privacy-focused website analytics alternative to Google Analytics |
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
