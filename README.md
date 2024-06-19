@@ -44,7 +44,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Pocketbase Setup
 
-First, we need to install Pocketbase. You can download the latest release from the [Pocketbase GitHub releases page](https://pocketbase.io/releases)
+First, we need to install Pocketbase. You can download the latest release from the [Pocketbase GitHub releases page](https://github.com/pocketbase/pocketbase/releases)
 
 ```bash
 wget https://github.com/pocketbase/pocketbase/releases/download/v0.8.0/pocketbase_0.8.0_linux_amd64.zip
