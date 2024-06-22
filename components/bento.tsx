@@ -18,6 +18,7 @@ import RetroGrid from "@/components/magicui/retro-grid";
 import { EmailForm } from "@/components/email-form";
 import { cn } from "@/lib/utils";
 import { formatTagString } from "@/lib/utils";
+import { formatLargeNumber } from "@/lib/utils";
 
 const fetchStars = async (): Promise<number> => {
   const baseUrl =
@@ -97,7 +98,7 @@ const GitHubStars = () => {
   if (stars === null) {
     return <div>0</div>;
   }
-
+  console.log(formatLargeNumber(stars));
   return <NumberTicker value={stars} />;
 };
 
@@ -231,7 +232,7 @@ const features = [
             href={`${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${f.slug}`}
             key={idx}
             className={cn(
-              "relative w-40 h-full cursor-pointer overflow-hidden rounded-xl border p-4 bg-red-500",
+              "relative w-40 h-full cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu transition-all duration-300 ease-out hover:blur-none"
@@ -315,19 +316,22 @@ const features = [
     href: `${process.env.GITHUB_URL}/${process.env.REPO_NAME}`,
     cta: "Star repository",
     background: (
-      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] group-hover:scale-110 group-hover:-translate-y-4">
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] group-hover:scale-105 group-hover:-translate-y-4">
         <div className="text-7xl font-semibold w-full flex justify-center items-center h-2/3 group-hover:-translate-y-2 transition-all duration-300">
-          <div className="flex items-center gap-2">
+          <a
+            href={`${process.env.GITHUB_URL}/${process.env.REPO_NAME}`}
+            className="flex items-center gap-2 border shadow-xl p-5 rounded-lg border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+          >
             <GitHubStars />
             <Image
               src="/images/githubstar.webp"
               alt="GitHub logo"
-              className="h-14 w-14"
+              className="h-14 w-14 drop-shadow"
               width={56}
               height={56}
               priority
             />
-          </div>
+          </a>
         </div>
       </div>
     ),
