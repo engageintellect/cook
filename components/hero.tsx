@@ -16,8 +16,8 @@ export default function Hero() {
 
         <div className="text-lg text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
           <BlurIn className="w-3/4 sm:w-2/3">
-            I build fullstack experiences. With a focus on Generative AI,
-            Data Visualization, Crypto/Finance, and UI/UX.
+            I craft sleek, full-stack experiences that users love and developers
+            enjoy expanding.
           </BlurIn>
 
           <FadeIn direction="down" className="my-class">

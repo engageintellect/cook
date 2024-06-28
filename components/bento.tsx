@@ -156,7 +156,7 @@ const features = [
     Icon: "",
     name: "I'm Josh",
     description:
-      "software engineer & open-source contributor focused in gen-ai, web, linux servers, pentesting, and finance.",
+      "software engineer & open-source contributor focused in gen-ai, web, linux, cybersecurity, and finance.",
     className: "col-span-3 md:col-span-1",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}`,
     cta: "Visit portfolio",
