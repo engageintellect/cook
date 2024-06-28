@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import MeteorShower from "@/components/magicui/meteors";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Button } from "@/components/ui/button";
