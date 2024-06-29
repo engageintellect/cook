@@ -13,12 +13,12 @@ An ultra-modern, bento-box styled portfolio landing page for developers, designe
 
 If you would like to help improve the performance, accessibility, best practices, and SEO of this project, please check out the issues tab for a list of tasks that need to be completed.
 
-| Metric         | Score |
-| -------------- | ----- |
-| Performance    | 98%   |
-| Accessibility  | 100%  |
-| Best Practices | 100%  |
-| SEO            | 100%  |
+| Metric         | Score                                      |
+| -------------- | ------------------------------------------ |
+| Performance    | 98% (help improve this by submitting a PR) |
+| Accessibility  | 100%                                       |
+| Best Practices | 100%                                       |
+| SEO            | 100%                                       |
 
 ## Technologies:
 
