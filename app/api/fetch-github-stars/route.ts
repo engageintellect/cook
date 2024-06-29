@@ -2,7 +2,9 @@ export const dynamic = 'force-dynamic'; // defaults to auto
 
 export async function GET(request: Request) {
   const username = "engageintellect";
-  const url = `https://api.github.com/users/${username}/repos?per_page=100`;
+  //TODO: this could be way cleaner.
+  //Ideally, we would do an initial request to get the total repo count
+  const url = `https://api.github.com/users/${username}/repos?per_page=10000`;
   const headers = { "Accept": "application/vnd.github.v3+json" };
 
   try {
