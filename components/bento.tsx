@@ -218,7 +218,7 @@ const features = [
   {
     Icon: "",
     name: "Tech Domain",
-    description: "AI, Web, Commerce, Finance.",
+    description: "Sector-agnostic, focused on solving problems with code.",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/projects`,
     cta: "View projects",
     className: "col-span-3 md:col-span-1",
@@ -297,7 +297,7 @@ const features = [
     Icon: "",
     name: "Worldwide Reach",
     description:
-      "Deploy to any region on earth. On-prem, in the cloud, or to the edge.",
+      "Deploy to any region on earth. On-prem, in the cloud, and to the edge.",
     className: "col-span-3 md:col-span-3",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/vercel`,
     cta: "Learn more",

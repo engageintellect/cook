@@ -60,6 +60,32 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [64.9631, -19.0208], size: 0.05 }, // Iceland
     { location: [41.8781, -87.6298], size: 0.07 }, // Chicago
     { location: [40.4168, -3.7038], size: 0.07 }, // Madrid
+    { location: [55.7558, 37.6173], size: 0.07 }, // Moscow, Russia
+    { location: [35.6762, 139.6503], size: 0.07 }, // Tokyo, Japan
+    { location: [-34.6037, -58.3816], size: 0.07 }, // Buenos Aires, Argentina
+    { location: [37.9838, 23.7275], size: 0.06 }, // Athens, Greece
+    { location: [28.6139, 77.209], size: 0.07 }, // New Delhi, India
+    { location: [45.4642, 9.19], size: 0.07 }, // Milan, Italy
+    { location: [50.1109, 8.6821], size: 0.07 }, // Frankfurt, Germany
+    { location: [35.8617, 104.1954], size: 0.07 }, // China
+    { location: [31.2304, 121.4737], size: 0.08 }, // Shanghai, China
+    { location: [48.2082, 16.3738], size: 0.06 }, // Vienna, Austria
+    { location: [50.8503, 4.3517], size: 0.06 }, // Brussels, Belgium
+    { location: [45.4215, -75.6972], size: 0.07 }, // Ottawa, Canada
+    { location: [55.8642, -4.2518], size: 0.06 }, // Glasgow, Scotland
+    { location: [31.7683, 35.2137], size: 0.07 }, // Jerusalem, Israel
+    { location: [-22.9068, -43.1729], size: 0.07 }, // Rio de Janeiro, Brazil
+    { location: [35.6895, 139.6917], size: 0.08 }, // Tokyo, Japan
+    { location: [25.0343, -77.3963], size: 0.06 }, // Nassau, Bahamas
+    { location: [22.3964, 114.1095], size: 0.07 }, // Hong Kong
+    { location: [3.139, 101.6869], size: 0.07 }, // Kuala Lumpur, Malaysia
+    { location: [-1.2921, 36.8219], size: 0.06 }, // Nairobi, Kenya
+    { location: [39.9042, 116.4074], size: 0.08 }, // Beijing, China
+    { location: [32.7767, -96.797], size: 0.06 }, // Dallas, Texas
+    { location: [39.9042, 116.4074], size: 0.08 }, // Beijing, China
+    { location: [-37.8136, 144.9631], size: 0.07 }, // Melbourne, Australia
+    { location: [43.7696, 11.2558], size: 0.06 }, // Florence, Italy
+    { location: [41.9028, 12.4964], size: 0.07 }, // Rome, Italy
   ],
 };
 
