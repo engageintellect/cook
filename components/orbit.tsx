@@ -1,4 +1,5 @@
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
+import { motion } from "framer-motion";
 import { IconProps } from "@radix-ui/react-icons/dist/types";
 import { SiVercel } from "react-icons/si";
 import { AiOutlineDocker } from "react-icons/ai";
@@ -23,120 +24,126 @@ export default function Orbit() {
       {/* Circles */}
       {/* </span> */}
 
-      {/* Center Circles */}
-      <OrbitingCircles
-        className="h-[20px] w-[20px] border-none bg-transparent"
-        duration={3}
-        delay={10}
-        radius={10}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.5 }}
       >
-        <Icons.gitHub />
-      </OrbitingCircles>
+        {/* Center Circles */}
+        <OrbitingCircles
+          className="h-[20px] w-[20px] border-none bg-transparent"
+          duration={3}
+          delay={10}
+          radius={10}
+        >
+          <Icons.gitHub />
+        </OrbitingCircles>
 
-      {/* Inner Circles */}
-      <OrbitingCircles
-        className="h-[20px] w-[20px] border-none bg-transparent"
-        duration={20}
-        radius={50}
-        delay={66}
-      >
-        <Icons.python />
-      </OrbitingCircles>
+        {/* Inner Circles */}
+        <OrbitingCircles
+          className="h-[20px] w-[20px] border-none bg-transparent"
+          duration={20}
+          radius={50}
+          delay={66}
+        >
+          <Icons.python />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[20px] w-[20px] border-none bg-transparent"
-        duration={20}
-        radius={50}
-        delay={132}
-      >
-        <Icons.svelte />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[20px] w-[20px] border-none bg-transparent"
+          duration={20}
+          radius={50}
+          delay={132}
+        >
+          <Icons.svelte />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[20px] w-[20px] border-none bg-transparent"
-        duration={20}
-        radius={50}
-        delay={198}
-      >
-        <Icons.typescript />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[20px] w-[20px] border-none bg-transparent"
+          duration={20}
+          radius={50}
+          delay={198}
+        >
+          <Icons.typescript />
+        </OrbitingCircles>
 
-      {/* Outer Circles (reverse) */}
-      <OrbitingCircles
-        className="h-[30px] w-[40px] border-none bg-transparent"
-        reverse
-        radius={100}
-        delay={20}
-        duration={20}
-      >
-        <Icons.vercel />
-      </OrbitingCircles>
+        {/* Outer Circles (reverse) */}
+        <OrbitingCircles
+          className="h-[30px] w-[40px] border-none bg-transparent"
+          reverse
+          radius={100}
+          delay={20}
+          duration={20}
+        >
+          <Icons.vercel />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[30px] w-[40px] border-none bg-transparent"
-        reverse
-        radius={100}
-        delay={25}
-        duration={20}
-      >
-        <Icons.ubuntu />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[30px] w-[40px] border-none bg-transparent"
+          reverse
+          radius={100}
+          delay={25}
+          duration={20}
+        >
+          <Icons.ubuntu />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[30px] w-[40px] border-none bg-transparent"
-        reverse
-        radius={100}
-        delay={30}
-        duration={20}
-      >
-        <Icons.docker />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="h-[30px] w-[40px] border-none bg-transparent"
-        reverse
-        radius={100}
-        delay={35}
-        duration={20}
-      >
-        <Icons.nginx />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[30px] w-[40px] border-none bg-transparent"
+          reverse
+          radius={100}
+          delay={30}
+          duration={20}
+        >
+          <Icons.docker />
+        </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[30px] w-[40px] border-none bg-transparent"
+          reverse
+          radius={100}
+          delay={35}
+          duration={20}
+        >
+          <Icons.nginx />
+        </OrbitingCircles>
 
-      {/* Most Outer Circles (reverse) */}
-      <OrbitingCircles
-        className="h-[40px] w-[40px] border-none bg-transparent"
-        radius={150}
-        duration={40}
-        delay={0}
-      >
-        <Icons.fastapi />
-      </OrbitingCircles>
+        {/* Most Outer Circles (reverse) */}
+        <OrbitingCircles
+          className="h-[40px] w-[40px] border-none bg-transparent"
+          radius={150}
+          duration={40}
+          delay={0}
+        >
+          <Icons.fastapi />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[40px] w-[40px] border-none bg-transparent"
-        radius={150}
-        duration={40}
-        delay={50}
-      >
-        <Icons.openai />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[40px] w-[40px] border-none bg-transparent"
+          radius={150}
+          duration={40}
+          delay={50}
+        >
+          <Icons.openai />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[40px] w-[40px] border-none bg-transparent"
-        radius={150}
-        duration={40}
-        delay={100}
-      >
-        <Icons.pocketbase />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[40px] w-[40px] border-none bg-transparent"
+          radius={150}
+          duration={40}
+          delay={100}
+        >
+          <Icons.pocketbase />
+        </OrbitingCircles>
 
-      <OrbitingCircles
-        className="h-[40px] w-[40px] border-none bg-transparent"
-        radius={150}
-        duration={40}
-        delay={150}
-      >
-        <Icons.laptop />
-      </OrbitingCircles>
+        <OrbitingCircles
+          className="h-[40px] w-[40px] border-none bg-transparent"
+          radius={150}
+          duration={40}
+          delay={150}
+        >
+          <Icons.laptop />
+        </OrbitingCircles>
+      </motion.div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
     depth: 1,
     wheelZoom: false,
     imageScale: 2,
-    activeCursor: "default",
+    activeCursor: "pointer",
     tooltip: "native",
     initial: [0.05, -0.05],
     clickToFront: 700,

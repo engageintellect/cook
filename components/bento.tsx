@@ -1,6 +1,7 @@
 "use client";
 
 import BlurIn from "@/components/magicui/blur-in";
+import { motion } from "framer-motion";
 import { FadeIn } from "@/components/magicui/fade-in";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { useState, useEffect } from "react";
@@ -223,32 +224,38 @@ const features = [
     cta: "View projects",
     className: "col-span-3 md:col-span-1",
     background: (
-      <Marquee
-        className="absolute h-2/3 top-10 [--duration:40s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] w-full"
-        pauseOnHover
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.5 }}
       >
-        {defaultFiles.map((f, idx) => (
-          <a
-            href={`${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${f.slug}`}
-            key={idx}
-            className={cn(
-              "relative w-40 h-full cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
-              "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-              "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu transition-all duration-300 ease-out hover:blur-none"
-            )}
-          >
-            <div className="flex flex-row items-center gap-2">
-              <div className="flex flex-col">
-                <figcaption className="text-lg font-bold dark:text-white ">
-                  {f.name}
-                </figcaption>
+        <Marquee
+          className="absolute h-2/3 top-10 [--duration:40s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] w-full"
+          pauseOnHover
+        >
+          {defaultFiles.map((f, idx) => (
+            <a
+              href={`${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${f.slug}`}
+              key={idx}
+              className={cn(
+                "relative w-40 h-full cursor-pointer overflow-hidden rounded-xl border p-4 hover:-translate-y-1",
+                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+                "transform-gpu transition-all duration-300 ease-out hover:blur-none"
+              )}
+            >
+              <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-col">
+                  <figcaption className="text-lg font-bold dark:text-white ">
+                    {f.name}
+                  </figcaption>
+                </div>
               </div>
-            </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
-          </a>
-        ))}
-      </Marquee>
+              <blockquote className="mt-2 text-xs">{f.body}</blockquote>
+            </a>
+          ))}
+        </Marquee>
+      </motion.div>
     ),
   },
   {
@@ -276,7 +283,13 @@ const features = [
     cta: "Visit AI projects",
     className: "col-span-3 md:col-span-2",
     background: (
-      <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        <AnimatedBeamMultipleOutputs className="absolute right-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] md:[mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] group-hover:scale-105" />
+      </motion.div>
     ),
   },
   {
