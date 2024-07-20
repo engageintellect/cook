@@ -20,6 +20,9 @@ import { EmailForm } from "@/components/email-form";
 import { cn } from "@/lib/utils";
 import { formatTagString } from "@/lib/utils";
 import { formatLargeNumber } from "@/lib/utils";
+import StatsChart from "@/components/stats-chart";
+import { defaultDomains } from "@/lib/data";
+import { RippleCard } from "./ui/ripper-card";
 
 const fetchStars = async (): Promise<number> => {
   const baseUrl =
@@ -36,45 +39,6 @@ const fetchProjects = async () => {
   const data = await res.json();
   return data;
 };
-
-const defaultFiles = [
-  {
-    name: "Crypto",
-    body: "Interface with blockchains, create smart contracts, track market data, manage digital assets.",
-    slug: "crypto",
-    image: "crypto",
-  },
-  {
-    name: "Commerce",
-    body: "Sell your product or service online.",
-    slug: "commerce",
-    image: "crypto",
-  },
-  {
-    name: "Web",
-    body: "Create beautiful, responsive, and performant websites.",
-    slug: "web",
-    image: "crypto",
-  },
-  {
-    name: "IOT",
-    body: "Interface with things around you.",
-    slug: "iot",
-    image: "crypto",
-  },
-  {
-    name: "AI",
-    body: "Create intelligent, context-aware applications that understand your unique data.",
-    slug: "ai",
-    image: "crypto",
-  },
-  {
-    name: "API",
-    body: "Create APIs that power your applications.",
-    slug: "api",
-    image: "crypto",
-  },
-];
 
 interface Item {
   name: string;
@@ -105,7 +69,7 @@ const GitHubStars = () => {
 
 const ProjectPosts = () => {
   const [posts, setPosts] = useState<any | null>(null);
-  const [files, setFiles] = useState(defaultFiles);
+  const [files, setFiles] = useState(defaultDomains);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -233,7 +197,7 @@ const features = [
           className="absolute h-2/3 top-10 [--duration:40s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] w-full"
           pauseOnHover
         >
-          {defaultFiles.map((f, idx) => (
+          {defaultDomains.map((f, idx) => (
             <a
               href={`${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${f.slug}`}
               key={idx}
@@ -367,6 +331,43 @@ const features = [
                 <ProjectPosts />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  {
+    Icon: "",
+    name: "Site Visitors",
+    description:
+      "Live analytics of this site's past 24 hour visitors. Powered by Umami Analytics.",
+    className: "col-span-3 md:col-span-2",
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/umami`,
+    cta: "Umami Analytics",
+    background: (
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
+        <div className="absolute h-full w-full [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)]">
+          <div className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_2%,#000_10%)]">
+            <StatsChart />
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  {
+    Icon: "",
+    name: "",
+    description: "",
+    className: "col-span-3 md:col-span-1",
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/umami`,
+    cta: "Umami Analytics",
+    background: (
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
+        <div className="absolute h-full w-full [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)]">
+          <div className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_2%,#000_10%)]">
+            <RippleCard />
           </div>
         </div>
       </div>
