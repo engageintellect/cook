@@ -11,7 +11,7 @@ export async function GET(request: Request) {
 
     // Get the current time and the Unix epoch time in milliseconds
     const now = Date.now();
-    const oneDayInMilliseconds = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    const oneDayInMilliseconds = 7 * 24 * 60 * 60 * 1000; // 24 hours in milliseconds
     const startAt = now - oneDayInMilliseconds; // 24 hours ago
 
     // Prepare the data object for getWebsiteMetrics

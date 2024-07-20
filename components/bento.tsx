@@ -1,28 +1,28 @@
 "use client";
 
-import BlurIn from "@/components/magicui/blur-in";
-import { motion } from "framer-motion";
-import { FadeIn } from "@/components/magicui/fade-in";
-import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
-import { useState, useEffect } from "react";
 import Image from "next/image";
-import ThemeToggle from "@/components/theme-toggle";
+import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+import BlurIn from "@/components/magicui/blur-in";
+import { EmailForm } from "@/components/email-form";
+import { FadeIn } from "@/components/magicui/fade-in";
+import GlobeAndStars from "@/components/globe-and-stars";
 import Hero from "@/components/hero";
 import Marquee from "@/components/magicui/marquee";
 import Technologies from "@/components/technologies";
-import GlobeAndStars from "@/components/globe-and-stars";
-import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
+import ThemeToggle from "@/components/theme-toggle";
 import NumberTicker from "@/components/magicui/number-ticker";
 import Orbit from "@/components/orbit";
-import { AnimatedBeamMultipleOutputs } from "@/components/animated-beam-multiple-outputs";
+import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
 import RetroGrid from "@/components/magicui/retro-grid";
-import { EmailForm } from "@/components/email-form";
+import StatsChart from "@/components/stats-chart";
 import { cn } from "@/lib/utils";
 import { formatTagString } from "@/lib/utils";
 import { formatLargeNumber } from "@/lib/utils";
-import StatsChart from "@/components/stats-chart";
 import { defaultDomains } from "@/lib/data";
 import { RippleCard } from "./ui/ripper-card";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const fetchStars = async (): Promise<number> => {
   const baseUrl =
@@ -339,20 +339,22 @@ const features = [
 
   {
     Icon: "",
-    name: "Site Visitors",
-    description:
-      "Live analytics of this site's past 24 hour visitors. Powered by Umami Analytics.",
+    name: "Daily Visitors",
+    description: "Live visitor stats, powered by Umami Analytics.",
+    href: "https://umami.is",
+    cta: "Umami",
     className: "col-span-3 md:col-span-2",
-    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/umami`,
-    cta: "Umami Analytics",
     background: (
-      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
-        <div className="absolute h-full w-full [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)]">
-          <div className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_2%,#000_10%)]">
-            <StatsChart />
+      <>
+        <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
+          <div className="absolute h-full w-full [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)]">
+            <div className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_2%,#000_10%)]"></div>
+            <div className="sm:-translate-y-5">
+              <StatsChart />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     ),
   },
 
@@ -361,10 +363,10 @@ const features = [
     name: "",
     description: "",
     className: "col-span-3 md:col-span-1",
-    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/umami`,
-    cta: "Umami Analytics",
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/now`,
+    cta: "Ideas",
     background: (
-      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[102%]">
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out group-hover:scale-[105%]">
         <div className="absolute h-full w-full [mask-image:linear-gradient(to_top,transparent_20%,#000_70%)]">
           <div className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_2%,#000_10%)]">
             <RippleCard />

@@ -119,11 +119,7 @@ export default function StatsChart() {
   }, [stats]);
 
   if (!stats) {
-    return (
-      <div className="flex items-center justify-center h-[70%]">
-        <LoaderCircle className="h-24 w-24 animate-spin" />
-      </div>
-    );
+    return <div className="flex items-center justify-center h-full"></div>;
   }
 
   return (
