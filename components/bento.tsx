@@ -11,86 +11,15 @@ import Hero from "@/components/hero";
 import Marquee from "@/components/magicui/marquee";
 import Technologies from "@/components/technologies";
 import ThemeToggle from "@/components/theme-toggle";
-import NumberTicker from "@/components/magicui/number-ticker";
 import Orbit from "@/components/orbit";
-import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
 import RetroGrid from "@/components/magicui/retro-grid";
 import StatsChart from "@/components/stats-chart";
 import { cn } from "@/lib/utils";
-import { formatTagString } from "@/lib/utils";
-import { formatLargeNumber } from "@/lib/utils";
 import { defaultDomains } from "@/lib/data";
 import { RippleCard } from "./ui/ripper-card";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-
-const fetchStars = async (): Promise<number> => {
-  const baseUrl =
-    typeof window !== "undefined" ? "" : process.env.NEXT_PUBLIC_BASE_URL;
-  const res = await fetch(`${baseUrl}/api/fetch-github-stars`);
-  const data = await res.json();
-  return Number(data?.totalStars);
-};
-
-const fetchProjects = async () => {
-  const baseUrl =
-    typeof window !== "undefined" ? "" : process.env.NEXT_PUBLIC_BASE_URL;
-  const res = await fetch(`${baseUrl}/api/fetch-project-posts`);
-  const data = await res.json();
-  return data;
-};
-
-interface Item {
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  time: string;
-}
-
-const GitHubStars = () => {
-  const [stars, setStars] = useState<number | null>(null);
-
-  useEffect(() => {
-    const getStars = async () => {
-      const totalStars = await fetchStars();
-      setStars(totalStars);
-    };
-
-    getStars();
-  }, []);
-
-  if (stars === null) {
-    return <div>0</div>;
-  }
-  console.log(formatLargeNumber(stars));
-  return <NumberTicker value={stars} />;
-};
-
-const ProjectPosts = () => {
-  const [posts, setPosts] = useState<any | null>(null);
-  const [files, setFiles] = useState(defaultDomains);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const postsData = await fetchProjects();
-      if (postsData) {
-        const formattedPosts = postsData.postsData.map((post: any) => ({
-          name: post.data.title,
-          body: post.data.description,
-          slug: post.slug,
-          image: post.data.image,
-        }));
-        setFiles(formattedPosts.slice(0, 10));
-      }
-      setPosts(postsData);
-    };
-
-    getPosts();
-  }, []);
-
-  return <ProjectShowcaseVertical projects={files} />;
-};
+import GitHubStars from "@/components/github-stars";
+import ProjectPosts from "@/components/project-posts";
 
 const features = [
   {

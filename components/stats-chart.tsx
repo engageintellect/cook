@@ -4,6 +4,7 @@ import * as React from "react";
 import { Label, Pie, PieChart } from "recharts";
 import { useEffect, useState } from "react";
 import { LoaderCircle } from "lucide-react";
+import NumberTicker from "@/components/magicui/number-ticker";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -133,7 +134,7 @@ export default function StatsChart() {
           data={chartData}
           dataKey="visitors"
           nameKey="type"
-          innerRadius={60}
+          innerRadius={70}
           strokeWidth={5}
         >
           <Label
@@ -149,14 +150,14 @@ export default function StatsChart() {
                     <tspan
                       x={viewBox.cx}
                       y={viewBox.cy}
-                      className="fill-foreground text-3xl font-bold"
+                      className="fill-foreground text-5xl font-bold"
                     >
                       {chartData[0].visitors}
                     </tspan>
                     <tspan
                       x={viewBox.cx}
                       y={(viewBox.cy || 0) + 24}
-                      className="fill-muted-foreground"
+                      className="fill-muted-foreground "
                     >
                       Visits
                     </tspan>
