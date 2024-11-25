@@ -155,7 +155,7 @@ const features = [
     Icon: "",
     name: "Technologies",
     description:
-      "Using a combination of cutting-edge, and time-tested technologies.",
+      "Using a combination of cutting-edge, and time-tested technologies to build robust, scalable, and secure applications.",
     href: "/technologies",
     cta: "View all technologies",
     className: "col-span-3 md:col-span-2",
@@ -203,7 +203,7 @@ const features = [
     Icon: "",
     name: "Worldwide Reach",
     description:
-      "Deploy to any region on earth. On-prem, in the cloud, and to the edge.",
+      "Deploy to any region on earth. From remote servers, on-prem, in the cloud, or to the edge.",
     className: "col-span-3 md:col-span-3",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/vercel`,
     cta: "Learn more",
@@ -247,7 +247,7 @@ const features = [
     Icon: "",
     name: "Project Showcase",
     description:
-      "Here are a few recent projects, using the technologies mentioned above.",
+      "Here are a few of my recent projects, using the technologies mentioned above.",
     className: "col-span-3 md:col-span-2",
     href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/projects`,
     cta: "All projects",
@@ -269,7 +269,7 @@ const features = [
   {
     Icon: "",
     name: "Daily Visitors",
-    description: "Live visitor stats, powered by Umami Analytics.",
+    description: "Live visitor stats for this website, powered by Umami Analytics.",
     href: "https://umami.is",
     cta: "Umami",
     className: "col-span-3 md:col-span-2",
