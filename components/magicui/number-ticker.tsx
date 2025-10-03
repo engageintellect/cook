@@ -34,9 +34,15 @@ export default function NumberTicker({
     () =>
       springValue.on("change", (latest) => {
         if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat("en-US").format(
-            latest.toFixed(0)
-          );
+          const num = Number(latest.toFixed(0));
+          // Format large numbers (1000+ becomes 1k, 1000000+ becomes 1m)
+          if (num >= 1_000_000) {
+            ref.current.textContent = (num / 1_000_000).toFixed(2).replace(/\.?0+$/, '') + 'm';
+          } else if (num >= 1_000) {
+            ref.current.textContent = (num / 1_000).toFixed(2).replace(/\.?0+$/, '') + 'k';
+          } else {
+            ref.current.textContent = Intl.NumberFormat("en-US").format(num);
+          }
         }
       }),
     [springValue]
