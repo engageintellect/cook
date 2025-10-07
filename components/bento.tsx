@@ -20,6 +20,7 @@ import { RippleCard } from "./ui/ripper-card";
 import { motion } from "framer-motion";
 import GitHubStars from "@/components/github-stars";
 import ProjectPosts from "@/components/project-posts";
+import { Terminal, TypingAnimation, AnimatedSpan } from "@/components/magicui/terminal";
 
 const features = [
   {
@@ -160,8 +161,8 @@ const features = [
     cta: "View all technologies",
     className: "col-span-3 md:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 w-[80%] origin-top translate-x-0 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] md:[mask-image:linear-gradient(to_top,transparent_50%,#000_70%)] group-hover:-translate-y-5 group-hover:scale-105">
-        <FadeIn direction="up">
+      <div className="absolute right-0 top-0 w-[110%] h-[110%] origin-top-right translate-x-[5%] -translate-y-[15%] transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_40%)] group-hover:-translate-y-[18%] group-hover:scale-105">
+        <FadeIn direction="up" className="w-full h-full flex items-start justify-end">
           <Technologies />
         </FadeIn>
       </div>
@@ -261,6 +262,28 @@ const features = [
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    ),
+  },
+
+  {
+    Icon: "",
+    name: "Developer Tools",
+    description: "Built with modern development practices and workflows.",
+    className: "col-span-3 md:col-span-3",
+    href: `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/devtools`,
+    cta: "View tools",
+    background: (
+      <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_30%,#000_70%)] group-hover:scale-[102%]">
+        <div className="flex items-center justify-center h-full w-full p-4">
+          <Terminal className="w-full max-w-md">
+            <TypingAnimation>$ pnpm create next-app</TypingAnimation>
+            <AnimatedSpan>✔ Creating a new Next.js app...</AnimatedSpan>
+            <AnimatedSpan>✔ Installing dependencies...</AnimatedSpan>
+            <AnimatedSpan>✔ Initializing project...</AnimatedSpan>
+            <AnimatedSpan className="text-green-500">✓ Success! Ready to code.</AnimatedSpan>
+          </Terminal>
         </div>
       </div>
     ),
