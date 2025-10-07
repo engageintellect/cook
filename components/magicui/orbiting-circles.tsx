@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -30,6 +30,26 @@ export function OrbitingCircles({
   ...props
 }: OrbitingCirclesProps) {
   const calculatedDuration = duration / speed
+  const divRef = useRef<HTMLDivElement>(null)
+  
+  useEffect(() => {
+    if (!divRef.current) return
+    
+    let currentAngle = startAngle
+    const step = reverse ? -0.5 : 0.5 // degrees per frame
+    
+    const animate = () => {
+      if (!divRef.current) return
+      currentAngle += step
+      const transform = `rotate(${currentAngle}deg) translateY(${radius}px) rotate(-${currentAngle}deg)`
+      divRef.current.style.transform = transform
+      requestAnimationFrame(animate)
+    }
+    
+    const animationId = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationId)
+  }, [startAngle, radius, reverse])
+  
   return (
     <>
       {path && (
@@ -48,17 +68,11 @@ export function OrbitingCircles({
         </svg>
       )}
       <div
+        ref={divRef}
         style={
           {
-            "--duration": calculatedDuration,
-            "--radius": radius,
-            "--angle": startAngle,
-            "--icon-size": `${iconSize}px`,
             width: `${iconSize}px`,
             height: `${iconSize}px`,
-            animation: `orbit ${calculatedDuration}s linear infinite`,
-            animationDelay: `${delay}s`,
-            animationDirection: reverse ? "reverse" : "normal",
             transform: `rotate(${startAngle}deg) translateY(${radius}px) rotate(-${startAngle}deg)`,
           } as React.CSSProperties
         }
