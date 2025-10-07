@@ -47,30 +47,25 @@ export function OrbitingCircles({
           />
         </svg>
       )}
-      {React.Children.map(children, (child, index) => {
-        const angle = startAngle + (360 / React.Children.count(children)) * index
-        return (
-          <div
-            style={
-              {
-                "--duration": calculatedDuration,
-                "--radius": radius,
-                "--angle": angle,
-                "--icon-size": `${iconSize}px`,
-                animationDelay: `${delay}s`,
-              } as React.CSSProperties
-            }
-            className={cn(
-              `animate-orbit absolute flex size-[var(--icon-size)] transform-gpu items-center justify-center rounded-full`,
-              { "[animation-direction:reverse]": reverse },
-              className
-            )}
-            {...props}
-          >
-            {child}
-          </div>
-        )
-      })}
+      <div
+        style={
+          {
+            "--duration": calculatedDuration,
+            "--radius": radius,
+            "--angle": startAngle,
+            "--icon-size": `${iconSize}px`,
+            animationDelay: `${delay}s`,
+          } as React.CSSProperties
+        }
+        className={cn(
+          `animate-orbit absolute flex size-[var(--icon-size)] transform-gpu items-center justify-center rounded-full`,
+          { "[animation-direction:reverse]": reverse },
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
     </>
   )
 }
