@@ -22,7 +22,7 @@ export default function Tech() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="flex-1 w-full flex items-start justify-center p-4 pt-0 -mt-20 md:-mt-32"
+        className="flex-1 w-full flex items-start justify-center p-4 -mt-8"
       >
         <div className="w-full h-full max-w-[min(90vw,90vh)] max-h-[min(90vw,90vh)]">
           <Technologies liveLinks={true} />

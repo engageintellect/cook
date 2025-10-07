@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
-import IconCloud from "@/components/magicui/icon-cloud";
+import { IconCloud } from "@/components/magicui/icon-cloud";
+import { useRouter } from "next/navigation";
 
 const slugs = [
   "amazonaws",
@@ -59,9 +62,24 @@ interface TechnologiesProps {
 }
 
 export default function Technologies({ liveLinks = false }: TechnologiesProps) {
+  const router = useRouter();
+  const images = slugs.map(slug => `https://cdn.simpleicons.org/${slug}`);
+  
+  const handleIconClick = (index: number) => {
+    if (!liveLinks) return;
+    
+    const slug = slugs[index];
+    if (slug) {
+      router.push(`${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/tags/${slug}`);
+    }
+  };
+  
   return (
-    <div className="">
-      <IconCloud iconSlugs={slugs} liveLinks={liveLinks} />
+    <div className="w-full h-full flex items-center justify-center">
+      <IconCloud 
+        images={images} 
+        onIconClick={liveLinks ? handleIconClick : undefined}
+      />
     </div>
   );
 }
