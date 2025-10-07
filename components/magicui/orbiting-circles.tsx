@@ -55,6 +55,7 @@ export function OrbitingCircles({
             "--angle": startAngle,
             "--icon-size": `${iconSize}px`,
             animationDelay: `${delay}s`,
+            transform: `rotate(${startAngle}deg) translateY(${radius}px) rotate(-${startAngle}deg)`,
           } as React.CSSProperties
         }
         className={cn(
