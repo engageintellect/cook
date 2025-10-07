@@ -36,7 +36,7 @@ export function OrbitingCircles({
     if (!divRef.current) return
     
     let currentAngle = startAngle
-    const step = reverse ? -0.5 : 0.5 // degrees per frame
+    const step = reverse ? -0.25 : 0.25 // degrees per frame (50% slower)
     
     const animate = () => {
       if (!divRef.current) return
